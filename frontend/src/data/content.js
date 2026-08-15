@@ -25,9 +25,9 @@ export const hero = {
 
 export const introQuote = {
   quote:
-    'XarKode is the partner that connects your digital presence, automates your workflows, and builds the infrastructure your business needs to grow.',
-  name: 'Robert Williams',
-  title: 'CEO of TechNova AG',
+    'Our vision at XarKode is simple: we engineer digital ecosystems that don\'t just look beautiful, but actively drive growth, automate workflows, and scale your business to new heights.',
+  name: 'Adeel Qaiser',
+  title: 'CEO & Founder, XarKode',
 };
 
 export const painPoints = [
