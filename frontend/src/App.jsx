@@ -1,9 +1,12 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
+import Lenis from 'lenis';
+
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 import Toaster from './components/Toaster.jsx';
 import BackToTop from './components/BackToTop.jsx';
+import Loader from './components/Loader.jsx';
 
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
@@ -22,9 +25,36 @@ function ScrollToTop() {
 }
 
 export default function App() {
+  useEffect(() => {
+    // Initialize Lenis for premium smooth scrolling
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+      infinite: false,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <Loader />
       <div className="min-h-screen bg-ink-900">
         <Navbar />
         <main>
