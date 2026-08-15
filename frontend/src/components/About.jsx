@@ -1,12 +1,13 @@
 import { Quote, Target, Zap, Shield, Rocket } from 'lucide-react';
 import { Container, Reveal } from './ui.jsx';
 import { brand, introQuote, painPoints } from '../data/content.js';
+import ceoImage from '../assets/ceo-adeel.jpg';
 
 const painPointIcons = [Target, Zap, Shield, Rocket];
 
 export default function About() {
   return (
-    <section id="about" className="relative bg-ink-900 py-24 sm:py-32 overflow-hidden">
+    <section id="about" className="relative bg-ink-900 py-20 sm:py-24 lg:py-32 overflow-hidden">
       {/* Background ambient glow */}
       <div className="absolute top-1/4 left-0 w-full max-w-3xl h-[600px] bg-brand-teal/5 blur-[150px] rounded-full pointer-events-none -translate-x-1/2" />
 
@@ -15,26 +16,26 @@ export default function About() {
         {/* CEO Message / Vision Split Layout */}
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20 items-center">
           {/* Left: CEO / Vision Image */}
-          <Reveal className="relative group">
-            <div className="relative h-[500px] w-full overflow-hidden rounded-[2.5rem] bg-ink-800 shadow-[0_0_40px_rgba(46,230,197,0.1)]">
+          <Reveal className="relative group w-full">
+            <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] w-full overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] bg-ink-800 shadow-[0_0_40px_rgba(46,230,197,0.1)]">
               {/* Animated gradient border glow */}
               <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/20 to-brand-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-20" />
               
               <img 
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32d7?q=80&w=1932&auto=format&fit=crop" 
+                src={ceoImage}
                 alt="Adeel Qaiser - CEO" 
-                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 grayscale group-hover:grayscale-0"
+                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
               
               {/* Overlay Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-ink-900 via-ink-900/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink-900 via-ink-900/40 to-transparent pointer-events-none" />
               
-              <div className="absolute bottom-8 left-8 right-8 z-10">
-                <div className="glass-card-strong px-6 py-4 rounded-2xl backdrop-blur-md inline-block">
-                  <p className="font-display text-lg font-extrabold tracking-widest text-white uppercase">
+              <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8 z-10">
+                <div className="glass-card-strong px-5 py-3 sm:px-6 sm:py-4 rounded-xl sm:rounded-2xl backdrop-blur-md inline-block max-w-full">
+                  <p className="font-display text-base sm:text-lg font-extrabold tracking-widest text-white uppercase truncate">
                     {introQuote.name}
                   </p>
-                  <p className="text-xs font-semibold text-brand-teal tracking-wider uppercase mt-1">
+                  <p className="text-[10px] sm:text-xs font-semibold text-brand-teal tracking-wider uppercase mt-1 truncate">
                     {introQuote.title}
                   </p>
                 </div>
@@ -44,16 +45,16 @@ export default function About() {
 
           {/* Right: The Message */}
           <Reveal delay={0.2} className="flex flex-col justify-center">
-            <Quote className="text-brand-teal/20 mb-6" size={60} />
-            <h2 className="font-display text-3xl font-extrabold text-white sm:text-4xl md:text-5xl leading-tight">
+            <Quote size={48} className="w-12 h-12 sm:w-16 sm:h-16 text-brand-teal/20 mb-4 sm:mb-6" />
+            <h2 className="font-display text-3xl font-extrabold text-white sm:text-4xl md:text-5xl lg:text-6xl leading-tight">
               Engineering <span className="text-gradient">Growth</span>
             </h2>
-            <p className="mt-8 text-lg sm:text-xl font-medium leading-relaxed text-muted-2">
+            <p className="mt-6 sm:mt-8 text-base sm:text-lg lg:text-xl font-medium leading-relaxed text-muted-2">
               "{introQuote.quote}"
             </p>
-            <div className="mt-10 flex items-center gap-4">
-              <div className="h-0.5 w-12 bg-gradient-to-r from-brand-teal to-brand-blue" />
-              <p className="text-sm font-bold uppercase tracking-widest text-white/50">Our Vision</p>
+            <div className="mt-8 sm:mt-10 flex items-center gap-4">
+              <div className="h-0.5 w-8 sm:w-12 bg-gradient-to-r from-brand-teal to-brand-blue" />
+              <p className="text-xs sm:text-sm font-bold uppercase tracking-widest text-white/50">Our Vision</p>
             </div>
           </Reveal>
         </div>
