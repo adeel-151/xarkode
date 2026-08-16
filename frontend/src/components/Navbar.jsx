@@ -60,15 +60,15 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:block">
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-teal to-brand-blue px-5 py-2 text-sm font-bold text-ink-900 shadow-[0_4px_16px_-4px_rgba(46,230,197,0.5)] transition-transform hover:-translate-y-0.5"
             >
               Contact Us
               <span className="flex h-6 w-6 items-center justify-center rounded-full bg-ink-900 text-white">
                 <ArrowUpRight size={13} strokeWidth={2.5} />
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* Mobile hamburger */}
@@ -105,14 +105,14 @@ export default function Navbar() {
                 ))}
               </nav>
               <div className="mt-4">
-                <a
-                  href="#contact"
+                <Link
+                  to="/contact"
                   onClick={handleLinkClick}
                   className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-teal to-brand-blue px-5 py-3 text-sm font-bold text-ink-900"
                 >
                   Contact Us
                   <ArrowUpRight size={14} strokeWidth={2.5} />
-                </a>
+                </Link>
               </div>
             </motion.div>
           )}

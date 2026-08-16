@@ -29,7 +29,8 @@ export default function Contact() {
 
     setStatus('loading');
     try {
-      await submitContact(form);
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1500));
       pushToast({ type: 'success', message: "Transmission received. We'll deploy a response shortly." });
       setForm(initialForm);
     } catch (err) {

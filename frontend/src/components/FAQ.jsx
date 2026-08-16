@@ -117,10 +117,14 @@ export default function FAQ() {
               <p className="text-muted-2 mb-8 max-w-lg">
                 Can't find the answer you're looking for? Our team is available and ready to help you navigate your digital transformation.
               </p>
-              <Link to="/contact">
-                <Button as="button" variant="fill" className="!px-8 !py-4 text-base">
-                  Talk to Our Team <ArrowRight size={18} className="ml-2" />
-                </Button>
+              <Link 
+                to="/contact"
+                className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-teal to-brand-blue px-8 py-4 text-base font-bold text-ink-900 shadow-[0_8px_24px_-8px_rgba(46,230,197,0.5)] transition-all duration-200 hover:-translate-y-0.5"
+              >
+                Talk to Our Team
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-ink-900 text-white">
+                  <ArrowRight size={14} strokeWidth={2.5} />
+                </span>
               </Link>
             </div>
           </div>
