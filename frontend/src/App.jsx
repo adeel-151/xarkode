@@ -15,6 +15,12 @@ import WhyUs from './pages/WhyUs.jsx';
 import Reviews from './pages/Reviews.jsx';
 import FAQ from './pages/FAQ.jsx';
 import Contact from './pages/Contact.jsx';
+import Quote from './pages/Quote.jsx';
+import CaseStudy from './pages/CaseStudy.jsx';
+import Blog from './pages/Blog.jsx';
+import BlogPost from './pages/BlogPost.jsx';
+
+import AiChat from './components/AiChat.jsx';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -66,9 +72,14 @@ export default function App() {
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/quote" element={<Quote />} />
+            <Route path="/work/:projectId" element={<CaseStudy />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
           </Routes>
         </main>
         <Footer />
+        <AiChat />
         <Toaster />
         <BackToTop />
       </div>

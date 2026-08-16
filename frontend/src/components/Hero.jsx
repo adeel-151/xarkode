@@ -3,6 +3,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Container } from './ui.jsx';
 import { hero } from '../data/content.js';
+import Hero3D from './Hero3D.jsx';
 
 const container = {
   hidden: {},
@@ -27,9 +28,12 @@ export default function Hero() {
       />
       
       {/* Dark & Gradient Overlays for Cinematic Feel */}
-      <div className="absolute inset-0 z-0 bg-ink-900/75 mix-blend-multiply" />
-      <div className="absolute inset-0 z-0 bg-gradient-to-t from-ink-900 via-ink-900/60 to-transparent" />
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-ink-900/80 via-transparent to-transparent" />
+      <div className="absolute inset-0 z-0 bg-ink-900/80 mix-blend-multiply" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-t from-ink-900 via-ink-900/70 to-transparent" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-ink-900/90 via-transparent to-transparent" />
+
+      {/* 3D WebGL Background */}
+      <Hero3D />
 
       <Container className="relative z-10 flex flex-col justify-center items-center h-full text-center">
         <motion.div

@@ -36,7 +36,7 @@ export default function Portfolio() {
             const stat = parseStat(project.statValue);
             return (
               <Reveal key={project.client} delay={i * 0.1}>
-                <div className="group relative h-[450px] sm:h-[500px] w-full overflow-hidden rounded-[2.5rem] bg-ink-800">
+                <Link to={`/work/${project.id}`} className="group block relative h-[450px] sm:h-[500px] w-full overflow-hidden rounded-[2.5rem] bg-ink-800">
                   {/* Background Image */}
                   <div className="absolute inset-0">
                     <img
@@ -45,7 +45,7 @@ export default function Portfolio() {
                       className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                     />
                     {/* Cinematic Gradients */}
-                    <div className="absolute inset-0 bg-ink-900/60 mix-blend-multiply" />
+                    <div className="absolute inset-0 bg-ink-900/60 mix-blend-multiply transition-opacity group-hover:opacity-80" />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink-900 via-ink-900/60 to-transparent" />
                   </div>
 
@@ -78,13 +78,16 @@ export default function Portfolio() {
                             duration={2200 + i * 200}
                           />
                         </span>
-                        <span className="max-w-[12rem] text-right text-xs leading-snug text-white/70 uppercase tracking-widest font-semibold">
-                          {project.statLabel}
-                        </span>
+                        <div className="flex flex-col items-end">
+                          <span className="max-w-[12rem] text-right text-xs leading-snug text-white/70 uppercase tracking-widest font-semibold mb-1">
+                            {project.statLabel}
+                          </span>
+                          <ArrowUpRight className="text-brand-teal h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </Reveal>
             );
           })}

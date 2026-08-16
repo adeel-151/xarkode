@@ -9,8 +9,9 @@ export const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Services', href: '/services' },
-  { label: 'Why Us', href: '/why-us' },
-  { label: 'Reviews', href: '/reviews' },
+  { label: 'Work', href: '/portfolio' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Quote', href: '/quote' },
   { label: 'FAQ', href: '/faq' },
 ];
 
@@ -78,6 +79,7 @@ export const beforeAfterCta = {
 
 export const portfolio = [
   {
+    id: 'technova',
     client: 'TECHNOVA',
     date: 'May 2026',
     description:
@@ -85,8 +87,17 @@ export const portfolio = [
     statValue: '+312%',
     statLabel: 'increase in qualified leads in 6 months',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop',
+    challenge: 'TechNova had an outdated website and was relying entirely on referrals. They lacked a predictable lead generation system to support their aggressive growth targets.',
+    solution: 'We designed a high-conversion, cinematic web experience and integrated a smart CRM. Simultaneously, we deployed automated LinkedIn outreach and Google Search campaigns.',
+    results: [
+      { label: 'Increase in Leads', value: '312%' },
+      { label: 'Reduction in CPA', value: '45%' },
+      { label: 'Time Saved Weekly', value: '20hrs' }
+    ],
+    techStack: ['React', 'Node.js', 'Salesforce Integration', 'Google Ads API']
   },
   {
+    id: 'yopavve',
     client: 'Yopavve',
     date: 'May 2026',
     description:
@@ -94,6 +105,14 @@ export const portfolio = [
     statValue: '+89%',
     statLabel: 'organic traffic growth in under 4 months',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+    challenge: 'Yopavve was losing market share to newer competitors with better SEO and a stronger digital presence.',
+    solution: 'A complete technical SEO audit and rebuild of their blog architecture, combined with AI-assisted content workflows to rapidly scale publication of high-value articles.',
+    results: [
+      { label: 'Organic Traffic Growth', value: '89%' },
+      { label: 'Keyword Rankings Top 3', value: '45+' },
+      { label: 'Content Production Speed', value: '3x Faster' }
+    ],
+    techStack: ['Next.js', 'Sanity CMS', 'OpenAI API', 'Ahrefs Data']
   },
 ];
 
@@ -281,3 +300,26 @@ export const globalCta = {
   buttonText: 'Book a Free Audit',
   buttonLink: '/contact',
 };
+
+export const blogPosts = [
+  {
+    slug: 'future-of-ai-automation-2026',
+    title: 'The Future of AI Automation in B2B Services',
+    excerpt: 'Discover how artificial intelligence is moving from a buzzword to a fundamental infrastructure requirement for service-based businesses.',
+    date: 'August 12, 2026',
+    author: 'Adeel Qaiser',
+    category: 'AI & Automations',
+    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=2000&auto=format&fit=crop',
+    content: 'Artificial Intelligence is no longer just a party trick. In 2026, we are seeing B2B agencies and service providers integrate AI deep into their operational infrastructure. From automated lead qualification bots that instantly score prospects, to generative workflows that draft proposals based on CRM data, the businesses scaling fastest are those embracing smart systems. We built XarKode specifically to address this shift: bridging the gap between beautiful digital storefronts and the intelligent engines that power them behind the scenes.'
+  },
+  {
+    slug: 'cinematic-web-design-conversion',
+    title: 'Why Cinematic Web Design Converts Better',
+    excerpt: 'A deep dive into the psychology of premium aesthetics and how micro-animations build instant trust with enterprise clients.',
+    date: 'July 28, 2026',
+    author: 'Elena Rostova',
+    category: 'Design & UX',
+    image: 'https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=2000&auto=format&fit=crop',
+    content: 'First impressions are everything, especially when pitching high-ticket services. Cinematic web design—characterized by deep contrasts, smooth framer-motion animations, and glassmorphism elements—signals to a prospective client that you care deeply about quality. When a user scrolls and the interface reacts fluidly, it creates a subconscious trust in your technical competence. In this post, we explore how reducing cognitive load while maximizing visual delight leads to a 40% higher conversion rate on enterprise landing pages.'
+  }
+];
