@@ -19,6 +19,7 @@ import Quote from './pages/Quote.jsx';
 import CaseStudy from './pages/CaseStudy.jsx';
 import Blog from './pages/Blog.jsx';
 import BlogPost from './pages/BlogPost.jsx';
+import PortfolioPage from './pages/PortfolioPage.jsx';
 
 import AiChat from './components/AiChat.jsx';
 
@@ -73,6 +74,7 @@ export default function App() {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/quote" element={<Quote />} />
+            <Route path="/portfolio" element={<PortfolioPage />} />
             <Route path="/work/:projectId" element={<CaseStudy />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />

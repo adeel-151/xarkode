@@ -10,7 +10,7 @@ function parseStat(str) {
   return { prefix: match[1], number: parseInt(match[2], 10), suffix: match[3] };
 }
 
-export default function Portfolio() {
+export default function Portfolio({ hideCta = false }) {
   const doubledLogos = [...portfolioLogos, ...portfolioLogos];
 
   return (
@@ -94,16 +94,18 @@ export default function Portfolio() {
         </div>
 
         {/* Divider + CTA */}
-        <Reveal className="mt-16 flex flex-col items-center gap-6 border-t border-white/10 pt-10 sm:flex-row sm:justify-between">
-          <p className="text-sm font-medium text-muted-2">Trusted by 20+ scaling companies worldwide.</p>
-          <Link
-            to="/portfolio"
-            className="group flex items-center gap-2 text-sm font-bold text-white transition-colors hover:text-brand-teal"
-          >
-            View Full Portfolio
-            <ArrowUpRight size={16} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          </Link>
-        </Reveal>
+        {!hideCta && (
+          <Reveal className="mt-16 flex flex-col items-center gap-6 border-t border-white/10 pt-10 sm:flex-row sm:justify-between">
+            <p className="text-sm font-medium text-muted-2">Trusted by 20+ scaling companies worldwide.</p>
+            <Link
+              to="/portfolio"
+              className="group flex items-center gap-2 text-sm font-bold text-white transition-colors hover:text-brand-teal"
+            >
+              View Full Portfolio
+              <ArrowUpRight size={16} className="transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </Link>
+          </Reveal>
+        )}
 
         {/* Dark Infinite Marquee */}
         <div className="mt-12 overflow-hidden mask-edges">
