@@ -1,18 +1,20 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Plus, X, Send, CheckCircle2, Loader2 } from 'lucide-react';
-import { Container, Reveal, Button } from './ui.jsx';
-import { faqItems, outcomeBadges, brand } from '../data/content.js';
-import { submitFaqQuestion } from '../lib/api.js';
-import useUIStore from '../store/useUIStore.js';
+import { Plus, X, Search, ArrowRight, MessageSquare } from 'lucide-react';
+import { Container, Reveal, Button, Badge } from './ui.jsx';
+import { faqItems } from '../data/content.js';
+import { Link } from 'react-router-dom';
 
 function AccordionItem({ item, isOpen, onToggle }) {
   return (
-    <div className={`rounded-2xl border px-5 transition-colors ${isOpen ? 'border-brand-teal/40 bg-ink-700/60' : 'border-ink-600 bg-ink-800'}`}>
-      <button type="button" onClick={onToggle} className="flex w-full items-center justify-between gap-4 py-4 text-left">
-        <span className={`text-sm font-medium ${isOpen ? 'text-brand-teal' : 'text-white'}`}>{item.question}</span>
-        <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full ${isOpen ? 'bg-brand-teal/15 text-brand-teal' : 'text-muted'}`}>
-          {isOpen ? <X size={14} /> : <Plus size={14} />}
+    <motion.div 
+      layout
+      className={`rounded-2xl border transition-all duration-300 ${isOpen ? 'border-brand-teal bg-ink-800 shadow-[0_0_30px_rgba(46,230,197,0.15)]' : 'border-ink-600 bg-ink-900/50 hover:border-brand-teal/30 hover:bg-ink-800'}`}
+    >
+      <button type="button" onClick={onToggle} className="flex w-full items-center justify-between gap-4 p-6 text-left">
+        <span className={`text-base sm:text-lg font-bold transition-colors ${isOpen ? 'text-brand-teal' : 'text-white'}`}>{item.question}</span>
+        <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors ${isOpen ? 'bg-brand-teal text-ink-900 shadow-[0_0_15px_rgba(46,230,197,0.5)]' : 'bg-ink-700 text-white'}`}>
+          {isOpen ? <X size={16} /> : <Plus size={16} />}
         </span>
       </button>
       <AnimatePresence initial={false}>
@@ -21,143 +23,105 @@ function AccordionItem({ item, isOpen, onToggle }) {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="overflow-hidden"
           >
-            <p className="pb-5 text-sm leading-relaxed text-muted-2">{item.answer}</p>
+            <p className="px-6 pb-6 text-base leading-relaxed text-muted-2">{item.answer}</p>
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
-  );
-}
-
-const badgePositions = [
-  { label: 'Cleaner', style: { left: '0%', bottom: '2%' } },
-  { label: 'Stronger', style: { left: '20%', top: '2%' } },
-  { label: 'More Modern', style: { left: '6%', bottom: '-14%' } },
-  { label: 'More Quality', style: { left: '46%', top: '-10%' } },
-  { label: 'More Profitable', style: { left: '38%', bottom: '-16%' } },
-  { label: 'Scalable', style: { right: '0%', bottom: '4%' } },
-];
-
-function FloatingBadge({ label, style, delay }) {
-  return (
-    <motion.span
-      style={style}
-      initial={{ y: -4 }}
-      animate={{ y: 4 }}
-      transition={{ duration: 3.4, delay, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' }}
-      className="absolute inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-ink-900 shadow-lg"
-    >
-      <CheckCircle2 size={13} className="text-positive" />
-      {label}
-    </motion.span>
+    </motion.div>
   );
 }
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState(faqItems.findIndex((f) => f.defaultOpen));
-  const [form, setForm] = useState({ email: '', question: '' });
-  const [status, setStatus] = useState('idle'); // idle | loading | done
-  const pushToast = useUIStore((s) => s.pushToast);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [openIndex, setOpenIndex] = useState(0);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!form.email || !form.question) return;
-
-    setStatus('loading');
-    try {
-      await submitFaqQuestion(form);
-      pushToast({ type: 'success', message: "Thanks — we'll get back to you soon." });
-      setForm({ email: '', question: '' });
-    } catch (err) {
-      pushToast({
-        type: 'error',
-        message: err?.response?.data?.message || 'Something went wrong. Please try again.',
-      });
-    } finally {
-      setStatus('idle');
-    }
-  };
+  const filteredItems = useMemo(() => {
+    if (!searchQuery.trim()) return faqItems;
+    return faqItems.filter(item => 
+      item.question.toLowerCase().includes(searchQuery.toLowerCase()) || 
+      item.answer.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }, [searchQuery]);
 
   return (
-    <section id="faq" className="bg-ink-800 py-16 sm:py-24 border-y border-ink-600">
-      <Container>
-        <Reveal>
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)] lg:gap-14">
-            <div>
-              <h2 className="font-display text-3xl font-extrabold text-white sm:text-4xl">
-                Frequently
-                <br />
-                Asked
-                <br />
-                Questions
-              </h2>
+    <section id="faq" className="bg-ink-900 py-24 sm:py-32 relative overflow-hidden">
+      {/* Background Glows */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-brand-blue/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-brand-teal/5 blur-[100px] rounded-full pointer-events-none" />
 
-              <form onSubmit={handleSubmit} className="mt-8 rounded-2xl border border-ink-600 bg-ink-700/40 p-5">
-                <p className="text-sm font-semibold text-white">Still have a question?</p>
-                <input
-                  type="email"
-                  required
-                  value={form.email}
-                  onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-                  placeholder="Write your email"
-                  className="mt-4 w-full rounded-xl border border-ink-600 bg-ink-800 px-4 py-3 text-sm text-white placeholder:text-muted focus:border-brand-teal focus:outline-none"
-                />
-                <textarea
-                  required
-                  rows={4}
-                  value={form.question}
-                  onChange={(e) => setForm((f) => ({ ...f, question: e.target.value }))}
-                  placeholder="Write your question..."
-                  className="mt-3 w-full resize-none rounded-xl border border-ink-600 bg-ink-800 px-4 py-3 text-sm text-white placeholder:text-muted focus:border-brand-teal focus:outline-none"
-                />
-                <div className="mt-4">
-                  <Button as="button" type="submit" variant="light" icon={false} disabled={status === 'loading'} className="w-full justify-center">
-                    {status === 'loading' ? (
-                      <span className="flex items-center gap-2">
-                        <Loader2 size={15} className="animate-spin" /> Sending
-                      </span>
-                    ) : (
-                      <span className="flex items-center gap-2">
-                        Send question <Send size={14} />
-                      </span>
-                    )}
-                  </Button>
-                </div>
-              </form>
-            </div>
+      <Container className="max-w-4xl relative z-10">
+        <Reveal className="text-center mb-16">
+          <Badge className="!bg-brand-blue/10 !border-brand-blue/30 !text-brand-blue font-bold mb-6">Support & Knowledge</Badge>
+          <h2 className="font-display text-4xl font-extrabold text-white sm:text-6xl mb-6">
+            We've Got <span className="text-gradient">Answers</span>
+          </h2>
+          <p className="text-lg text-muted-2 max-w-2xl mx-auto">
+            Everything you need to know about our process, pricing, and how we engineer growth for your business.
+          </p>
 
-            <div className="flex flex-col gap-3">
-              {faqItems.map((item, i) => (
-                <AccordionItem key={item.question} item={item} isOpen={openIndex === i} onToggle={() => setOpenIndex(openIndex === i ? null : i)} />
-              ))}
+          {/* Search Bar */}
+          <div className="mt-10 relative max-w-lg mx-auto">
+            <div className="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+              <Search className="text-brand-teal h-5 w-5" />
             </div>
+            <input 
+              type="text" 
+              placeholder="Search for an answer..." 
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full bg-ink-800 border border-ink-600 rounded-full py-4 pl-12 pr-6 text-white placeholder-muted-2 focus:outline-none focus:border-brand-teal focus:ring-1 focus:ring-brand-teal transition-all shadow-xl"
+            />
           </div>
+        </Reveal>
 
-          <div className="mt-20 text-center">
-            <p className="text-sm text-muted-2 sm:text-base">After working with us, every project becomes:</p>
+        {/* FAQ List */}
+        <Reveal delay={0.1}>
+          <div className="flex flex-col gap-4 min-h-[400px]">
+            <AnimatePresence>
+              {filteredItems.length > 0 ? (
+                filteredItems.map((item, i) => (
+                  <AccordionItem 
+                    key={item.question} 
+                    item={item} 
+                    isOpen={openIndex === i} 
+                    onToggle={() => setOpenIndex(openIndex === i ? null : i)} 
+                  />
+                ))
+              ) : (
+                <motion.div 
+                  initial={{ opacity: 0 }} animate={{ opacity: 1 }} 
+                  className="text-center py-12"
+                >
+                  <p className="text-muted-2 text-lg">No questions found matching "{searchQuery}"</p>
+                  <button onClick={() => setSearchQuery('')} className="mt-4 text-brand-teal hover:underline font-medium">Clear search</button>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </Reveal>
 
-            {/* Desktop / tablet — scattered badge cloud around the wordmark */}
-            <div className="relative mx-auto mt-6 hidden max-w-3xl py-16 sm:block">
-              <h3 className="select-none font-display text-7xl font-extrabold text-gradient md:text-8xl lg:text-[9rem]">{brand.name}</h3>
-              {badgePositions.map((b, i) => (
-                <FloatingBadge key={b.label} label={b.label} style={b.style} delay={i * 0.3} />
-              ))}
-            </div>
-
-            {/* Mobile — simplified stacked version */}
-            <div className="mt-6 sm:hidden">
-              <h3 className="select-none font-display text-5xl font-extrabold text-gradient">{brand.name}</h3>
-              <div className="mt-6 flex flex-wrap justify-center gap-2">
-                {outcomeBadges.map((label) => (
-                  <span key={label} className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-xs font-semibold text-ink-900">
-                    <CheckCircle2 size={13} className="text-positive" />
-                    {label}
-                  </span>
-                ))}
+        {/* Big Sleek CTA at the bottom */}
+        <Reveal delay={0.2} className="mt-24">
+          <div className="glass-card-strong rounded-3xl p-10 sm:p-14 border border-brand-teal/20 text-center relative overflow-hidden group">
+            {/* Hover flare */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-r from-brand-teal/0 via-brand-teal/5 to-brand-blue/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none blur-xl" />
+            
+            <div className="relative z-10 flex flex-col items-center">
+              <div className="w-16 h-16 rounded-full bg-brand-teal/10 flex items-center justify-center text-brand-teal mb-6 shadow-[0_0_30px_rgba(46,230,197,0.2)]">
+                <MessageSquare size={28} />
               </div>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-white mb-4">Still have a question?</h3>
+              <p className="text-muted-2 mb-8 max-w-lg">
+                Can't find the answer you're looking for? Our team is available and ready to help you navigate your digital transformation.
+              </p>
+              <Link to="/contact">
+                <Button as="button" variant="fill" className="!px-8 !py-4 text-base">
+                  Talk to Our Team <ArrowRight size={18} className="ml-2" />
+                </Button>
+              </Link>
             </div>
           </div>
         </Reveal>
