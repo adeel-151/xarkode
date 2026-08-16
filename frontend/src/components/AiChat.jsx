@@ -2,6 +2,26 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageSquare, X, Send, Bot, User } from 'lucide-react';
 
+function getBotResponse(input) {
+  const text = input.toLowerCase();
+  if (text.includes('price') || text.includes('cost') || text.includes('estimate') || text.includes('quote')) {
+    return "Our projects typically start at $5,000 for standard web development and can go up to $50k+ for full SaaS and AI integrations. You can get a precise estimate on our /quote page!";
+  }
+  if (text.includes('hi') || text.includes('hello') || text.includes('hey')) {
+    return "Hello there! I'm the XarKode AI. I can answer questions about our services, pricing, or direct you to our portfolio. What would you like to know?";
+  }
+  if (text.includes('ai') || text.includes('automation')) {
+    return "We specialize in AI & Automations! We build custom AI tools, smart workflow automations, and integrate LLMs directly into your business processes to save you hours every week.";
+  }
+  if (text.includes('service') || text.includes('offer')) {
+    return "We offer Web Development, App Development, SaaS Architecture, Graphic & UI/UX Design, and AI & Automation Systems. Basically, the full ecosystem.";
+  }
+  if (text.includes('portfolio') || text.includes('work') || text.includes('case study')) {
+    return "We've delivered massive ROI for companies like TechNova and Yopavve. Check out our 'Work' section to see the real metrics!";
+  }
+  return "That's an interesting question! Since I'm an AI, I recommend talking to a real human from the XarKode team. Head over to our Contact page to send them a message!";
+}
+
 export default function AiChat() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
@@ -21,25 +41,38 @@ export default function AiChat() {
 
   const handleSend = (e) => {
     e.preventDefault();
-    if (!input.trim()) return;
+    if (!input.trim() || isTyping) return;
 
-    const newMsg = { id: Date.now(), role: 'user', text: input };
+    const userText = input;
+    const newMsg = { id: Date.now(), role: 'user', text: userText };
     setMessages((prev) => [...prev, newMsg]);
     setInput('');
     setIsTyping(true);
 
-    // Mock AI Response
+    const fullResponse = getBotResponse(userText);
+    
+    // Simulate short network delay before starting to stream
     setTimeout(() => {
       setIsTyping(false);
-      setMessages((prev) => [
-        ...prev,
-        {
-          id: Date.now(),
-          role: 'bot',
-          text: 'Thanks for reaching out! A real human from the XarKode team will review your message. Can I help you calculate a project estimate or direct you to our portfolio?'
+      const botMsgId = Date.now() + 1;
+      setMessages((prev) => [...prev, { id: botMsgId, role: 'bot', text: '' }]);
+      
+      // Real-time streaming effect
+      let currentIndex = 0;
+      const interval = setInterval(() => {
+        if (currentIndex < fullResponse.length) {
+          const char = fullResponse[currentIndex]; // Capture character to avoid closure issues
+          setMessages((prev) => 
+            prev.map(msg => 
+              msg.id === botMsgId ? { ...msg, text: msg.text + char } : msg
+            )
+          );
+          currentIndex++;
+        } else {
+          clearInterval(interval);
         }
-      ]);
-    }, 1500);
+      }, 20); // 20ms per character for fast typing feel
+    }, 500);
   };
 
   return (
@@ -51,7 +84,7 @@ export default function AiChat() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="mb-4 flex w-80 flex-col overflow-hidden rounded-2xl border border-ink-600 bg-ink-800 shadow-2xl sm:w-96"
+            className="mb-4 flex w-[22rem] flex-col overflow-hidden rounded-2xl border border-ink-600 bg-ink-800 shadow-2xl sm:w-96"
           >
             {/* Header */}
             <div className="flex items-center justify-between border-b border-ink-700 bg-ink-900 px-4 py-3">
@@ -89,9 +122,9 @@ export default function AiChat() {
                     {msg.role === 'user' ? <User size={12} /> : <Bot size={12} />}
                   </div>
                   <div
-                    className={`rounded-2xl px-4 py-2 text-sm ${
+                    className={`rounded-2xl px-4 py-2 text-sm leading-relaxed ${
                       msg.role === 'user'
-                        ? 'rounded-tr-sm bg-gradient-to-br from-brand-teal to-brand-blue text-ink-900'
+                        ? 'rounded-tr-sm bg-gradient-to-br from-brand-teal to-brand-blue text-ink-900 font-medium'
                         : 'rounded-tl-sm bg-ink-700 text-white'
                     }`}
                   >
@@ -126,7 +159,7 @@ export default function AiChat() {
                 />
                 <button
                   type="submit"
-                  disabled={!input.trim()}
+                  disabled={!input.trim() || isTyping}
                   className="absolute right-1 flex h-8 w-8 items-center justify-center rounded-full bg-brand-teal text-ink-900 transition-transform disabled:opacity-50 disabled:hover:scale-100 hover:scale-105"
                 >
                   <Send size={14} />
