@@ -32,11 +32,11 @@ export default function Quote() {
 
   const calculateEstimate = () => {
     let base = 0;
-    if (formData.service === 'Web Development') base += 5000;
-    if (formData.service === 'App Development') base += 15000;
-    if (formData.service === 'AI Automation') base += 10000;
-    if (formData.service === 'SEO & Marketing') base += 3000;
-    return base > 0 ? `$${(base).toLocaleString()}` : 'Custom Quote';
+    if (formData.service === 'Web Development') base += 100000;
+    if (formData.service === 'App Development') base += 300000;
+    if (formData.service === 'AI Automation') base += 200000;
+    if (formData.service === 'SEO & Marketing') base += 50000;
+    return base > 0 ? `Rs ${(base).toLocaleString()} PKR` : 'Custom Quote';
   };
 
   const handleSubmit = (e) => {
@@ -95,7 +95,7 @@ export default function Quote() {
                 <motion.div key="step2" initial={{ x: 50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} exit={{ x: -50, opacity: 0 }}>
                   <h2 className="mb-6 text-2xl font-bold text-white">Select Your Budget Range</h2>
                   <div className="grid gap-4 sm:grid-cols-2">
-                    {['$1k - $5k', '$5k - $15k', '$15k - $50k', '$50k+'].map((b) => (
+                    {['Rs 50k - 100k', 'Rs 100k - 300k', 'Rs 300k - 1M', 'Rs 1M+'].map((b) => (
                       <button key={b} onClick={() => { updateForm('budget', b); nextStep(); }} className={`rounded-xl border p-6 text-left transition-all ${formData.budget === b ? 'border-brand-teal bg-brand-teal/10' : 'border-ink-600 hover:border-ink-500 hover:bg-ink-800/50'}`}>
                         <h3 className="font-bold text-white">{b}</h3>
                       </button>
@@ -154,7 +154,7 @@ export default function Quote() {
                     Thank you, {formData.name.split(' ')[0]}! We've received your request for {formData.service}. Our team will review your requirements and email you at {formData.email} within 24 hours.
                   </p>
                   <Link to="/">
-                    <Button>Return Home</Button>
+                    <Button as="button">Return Home</Button>
                   </Link>
                 </motion.div>
               )}
@@ -162,11 +162,11 @@ export default function Quote() {
 
             {currentStep < 4 && (
               <div className="mt-8 flex justify-between border-t border-ink-600 pt-6">
-                <Button variant="dark" onClick={prevStep} disabled={currentStep === 0 || isSubmitting} icon={false}>Back</Button>
+                <Button as="button" variant="dark" onClick={prevStep} disabled={currentStep === 0 || isSubmitting} icon={false}>Back</Button>
                 {currentStep < steps.length - 1 ? (
-                  <Button onClick={nextStep} disabled={isSubmitting} icon={false}>Continue</Button>
+                  <Button as="button" onClick={nextStep} disabled={isSubmitting} icon={false}>Continue</Button>
                 ) : (
-                  <Button onClick={handleSubmit} disabled={!canSubmit || isSubmitting} icon={false}>
+                  <Button as="button" onClick={handleSubmit} disabled={!canSubmit || isSubmitting} icon={false}>
                     {isSubmitting ? (
                       <span className="flex items-center gap-2">
                         <Loader2 size={16} className="animate-spin" /> Submitting...
