@@ -2,12 +2,27 @@ import { ArrowUpRight, ArrowDownRight, MessageCircle, Calendar } from 'lucide-re
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen bg-[#08070e] text-white pt-28 pb-12 flex flex-col justify-between overflow-hidden">
-      {/* Ambient Radial Glow on the right */}
+    <section 
+      className="relative min-h-screen text-white pt-28 pb-12 flex flex-col justify-between overflow-hidden"
+      style={{
+        backgroundColor: '#08070e',
+        backgroundImage: `
+          radial-gradient(ellipse 70% 60% at 75% 38%, rgba(124, 58, 237, 0.38) 0%, rgba(99, 32, 238, 0.20) 35%, rgba(26, 9, 64, 0.10) 65%, transparent 85%),
+          radial-gradient(circle at 90% 15%, rgba(168, 85, 247, 0.25) 0%, transparent 55%)
+        `,
+      }}
+    >
+      {/* Ambient Radial Glow Meshes on the right */}
       <div 
-        className="pointer-events-none absolute right-0 top-1/4 w-[750px] h-[750px] rounded-full blur-[140px] opacity-40 -mr-40"
+        className="pointer-events-none absolute right-[-8%] top-[12%] w-[880px] h-[880px] rounded-full blur-[140px] opacity-75"
         style={{
-          background: 'radial-gradient(circle, #7028e0 0%, #3b0764 45%, transparent 75%)',
+          background: 'radial-gradient(circle, #7028e0 0%, #4c1d95 45%, #1f0a4f 70%, transparent 85%)',
+        }}
+      />
+      <div 
+        className="pointer-events-none absolute right-[15%] top-[35%] w-[580px] h-[580px] rounded-full blur-[110px] opacity-60"
+        style={{
+          background: 'radial-gradient(circle, #9333ea 0%, #6b21a8 50%, transparent 80%)',
         }}
       />
 
@@ -70,9 +85,9 @@ export default function Hero() {
           {/* Right Column: Layered Interactive 3D Perspective Graphic */}
           <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[460px] perspective-1000 pt-8 pb-4">
-              {/* Layer 1: Angled Background Card ("Digital growth") */}
+              {/* Layer 1: Angled Background Card ("Digital growth") - Semi-transparent Frosted Glass */}
               <div 
-                className="absolute -top-4 right-0 w-[85%] bg-[#f5f4ef] text-[#1b0a3d] rounded-none p-6 shadow-2xl transform rotate-3 transition-transform duration-500 hover:rotate-1"
+                className="absolute -top-4 right-0 w-[85%] bg-[#f5f4ef]/80 backdrop-blur-md border border-white/30 text-[#1b0a3d] rounded-none p-6 shadow-2xl transform rotate-3 transition-transform duration-500 hover:rotate-1"
                 style={{ zIndex: 1 }}
               >
                 <div className="flex items-center justify-between border-b border-black/10 pb-3 mb-4">
@@ -85,9 +100,9 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Layer 2: Main Foreground Dashboard Card ("Clinic System") */}
+              {/* Layer 2: Main Foreground Dashboard Card - Translucent Dark Violet Glass */}
               <div 
-                className="relative bg-[#110d24]/95 border border-purple-500/25 rounded-none p-6 shadow-[0_20px_60px_rgba(0,0,0,0.8)] backdrop-blur-xl transform -rotate-1 hover:rotate-0 transition-transform duration-500"
+                className="relative bg-[#100c24]/70 border border-purple-400/35 rounded-none p-6 shadow-[0_25px_70px_rgba(0,0,0,0.7)] backdrop-blur-2xl transform -rotate-1 hover:rotate-0 transition-transform duration-500"
                 style={{ zIndex: 2 }}
               >
                 {/* Card Header */}
@@ -111,8 +126,8 @@ export default function Hero() {
                     </span>
                   </div>
 
-                  {/* Inner Workflow Map Box */}
-                  <div className="bg-[#0b0818] border border-white/10 rounded-none p-4 space-y-4">
+                  {/* Inner Workflow Map Box - Translucent Glass */}
+                  <div className="bg-[#090616]/60 border border-white/10 rounded-none p-4 space-y-4 backdrop-blur-sm">
                     <div className="flex items-center justify-between text-xs font-mono uppercase text-white/60">
                       <span>CORE ARCHITECTURE</span>
                       <Calendar size={14} className="text-purple-400" />
@@ -137,9 +152,9 @@ export default function Hero() {
                       </div>
                     </div>
 
-                    {/* Sub cards: Workflows & Automations */}
+                    {/* Sub cards: Workflows & Automations - Translucent */}
                     <div className="grid grid-cols-2 gap-3 pt-1">
-                      <div className="bg-white/[0.03] border border-white/10 rounded-none p-3">
+                      <div className="bg-white/[0.04] border border-white/10 rounded-none p-3 backdrop-blur-sm">
                         <div className="text-[10px] text-white/50 mb-1.5">Cloud Database</div>
                         <div className="space-y-1.5">
                           <div className="h-1.5 bg-white/20 rounded-full w-full" />
@@ -147,7 +162,7 @@ export default function Hero() {
                         </div>
                       </div>
 
-                      <div className="bg-white/[0.03] border border-white/10 rounded-none p-3">
+                      <div className="bg-white/[0.04] border border-white/10 rounded-none p-3 backdrop-blur-sm">
                         <div className="text-[10px] text-white/50 mb-1.5">Smart Automations</div>
                         <div className="flex items-center gap-1.5 text-[11px] font-medium text-emerald-400">
                           <MessageCircle size={13} />
