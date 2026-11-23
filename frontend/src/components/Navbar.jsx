@@ -1,123 +1,143 @@
-import { useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
-import { Container } from './ui.jsx';
-import { brand, navLinks } from '../data/content.js';
-import { Link } from 'react-router-dom';
-import useUIStore from '../store/useUIStore.js';
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { ArrowUpRight, Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const mobileMenuOpen = useUIStore((s) => s.mobileMenuOpen);
-  const setMobileMenuOpen = useUIStore((s) => s.setMobileMenuOpen);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleLinkClick = () => setMobileMenuOpen(false);
+  const navItems = [
+    { label: 'Services', href: '#services' },
+    { label: 'Solutions', href: '#solutions' },
+    { label: 'Work', href: '#work' },
+    { label: 'Process', href: '#process' },
+    { label: 'About', href: '#about' },
+    { label: 'Contact', href: '#contact' },
+  ];
+
+  const handleNavClick = (e, href) => {
+    setMobileMenuOpen(false);
+    if (href.startsWith('#')) {
+      if (location.pathname !== '/') {
+        // Let normal navigation to home anchor happen
+        return;
+      }
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4">
-      <Container className="!max-w-5xl">
-        {/* Main bar */}
-        <div
-          className={`flex items-center justify-between rounded-full px-5 py-2.5 backdrop-blur-xl transition-all duration-300 ${
-            scrolled
-              ? 'bg-white/[0.06] border border-white/10 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.5)]'
-              : 'bg-white/[0.04] border border-white/[0.06]'
-          }`}
-        >
-          {/* Logo */}
-          <Link to="/" className="font-display text-xl font-extrabold tracking-tight text-white">
-            {brand.short}
-            <span
-              style={{
-                backgroundImage: 'linear-gradient(90deg,#2ee6c5,#3b82f6)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}
-            >
-              {brand.accent}
-            </span>
-          </Link>
-
-          {/* Desktop nav */}
-          <nav className="hidden items-center gap-7 lg:flex">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                to={link.href}
-                className="text-sm font-medium text-white/70 transition-colors hover:text-white"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          {/* Desktop CTA */}
-          <div className="hidden lg:block">
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-teal to-brand-blue px-5 py-2 text-sm font-bold text-ink-900 shadow-[0_4px_16px_-4px_rgba(46,230,197,0.5)] transition-transform hover:-translate-y-0.5"
-            >
-              Contact Us
-              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-ink-900 text-white">
-                <ArrowUpRight size={13} strokeWidth={2.5} />
-              </span>
-            </Link>
+    <header className="fixed inset-x-0 top-0 z-50 bg-[#08070e]/85 backdrop-blur-md border-b border-white/[0.06] transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        {/* Brand Logo */}
+        <Link to="/" className="flex items-center gap-3 group">
+          {/* Angular Purple Ribbon Logo Mark */}
+          <div className="relative w-8 h-8 flex items-center justify-center">
+            <svg viewBox="0 0 40 40" className="w-8 h-8 fill-none">
+              <path
+                d="M10 8 L24 8 L32 18 L18 18 Z"
+                fill="url(#xarkode-logo-grad1)"
+                className="transition-transform duration-300 group-hover:translate-x-0.5"
+              />
+              <path
+                d="M8 22 L22 22 L30 32 L16 32 Z"
+                fill="url(#xarkode-logo-grad2)"
+                className="transition-transform duration-300 group-hover:-translate-x-0.5"
+              />
+              <defs>
+                <linearGradient id="xarkode-logo-grad1" x1="10" y1="8" x2="32" y2="18" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#9d68ff" />
+                  <stop offset="1" stopColor="#6d28d9" />
+                </linearGradient>
+                <linearGradient id="xarkode-logo-grad2" x1="8" y1="22" x2="30" y2="32" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#7c3aed" />
+                  <stop offset="1" stopColor="#4c1d95" />
+                </linearGradient>
+              </defs>
+            </svg>
           </div>
+          <span className="font-display font-extrabold text-xl tracking-tight text-white uppercase">
+            XARKODE
+          </span>
+        </Link>
 
-          {/* Mobile hamburger */}
-          <button
-            type="button"
-            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white lg:hidden"
+        {/* Desktop Nav Items */}
+        <nav className="hidden md:flex items-center gap-8">
+          {navItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              onClick={(e) => handleNavClick(e, item.href)}
+              className="text-sm font-medium text-white/70 hover:text-white transition-colors duration-200"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+
+        {/* Right CTA Button */}
+        <div className="hidden md:flex items-center">
+          <a
+            href="#contact"
+            onClick={(e) => handleNavClick(e, '#contact')}
+            className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-black transition-all duration-200 hover:bg-neutral-200 hover:scale-[1.02]"
           >
-            {mobileMenuOpen ? <X size={17} /> : <Menu size={17} />}
-          </button>
+            <span>Book a Strategy Call</span>
+            <ArrowUpRight size={15} strokeWidth={2.5} />
+          </a>
         </div>
 
-        {/* Mobile menu */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -8, scale: 0.98 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -8, scale: 0.98 }}
-              transition={{ duration: 0.18 }}
-              className="mt-2 overflow-hidden rounded-3xl border border-white/10 bg-ink-900/95 p-5 backdrop-blur-xl lg:hidden"
-            >
-              <nav className="flex flex-col gap-1">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    to={link.href}
-                    onClick={handleLinkClick}
-                    className="rounded-xl px-3 py-2.5 text-sm font-medium text-white/70 transition-colors hover:bg-ink-800 hover:text-white"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </nav>
-              <div className="mt-4">
-                <Link
-                  to="/contact"
-                  onClick={handleLinkClick}
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-teal to-brand-blue px-5 py-3 text-sm font-bold text-ink-900"
-                >
-                  Contact Us
-                  <ArrowUpRight size={14} strokeWidth={2.5} />
-                </Link>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </Container>
+        {/* Mobile Hamburger Button */}
+        <button
+          type="button"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          className="md:hidden flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-white"
+          aria-label="Toggle Navigation"
+        >
+          {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </div>
+
+      {/* Mobile Menu Dropdown */}
+      {mobileMenuOpen && (
+        <div className="md:hidden border-b border-white/10 bg-[#08070e]/98 px-6 py-6 backdrop-blur-xl">
+          <nav className="flex flex-col space-y-4">
+            {navItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
+                className="text-base font-semibold text-white/80 hover:text-white transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
+            <div className="pt-4 border-t border-white/10">
+              <a
+                href="#contact"
+                onClick={(e) => handleNavClick(e, '#contact')}
+                className="flex items-center justify-center gap-2 w-full rounded-full bg-white px-5 py-3 text-xs font-bold uppercase tracking-wider text-black"
+              >
+                <span>Book a Strategy Call</span>
+                <ArrowUpRight size={15} strokeWidth={2.5} />
+              </a>
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

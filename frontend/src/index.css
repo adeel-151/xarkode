@@ -1,36 +1,36 @@
 @import "tailwindcss";
 
 @theme {
-  /* ---- Brand gradient ---- */
-  --color-brand-teal: #2ee6c5;
-  --color-brand-blue: #3b82f6;
+  /* ---- GENZIC Signature Color Palette ---- */
+  --color-genzic-dark: #08070e;
+  --color-genzic-dark-card: #0f0c1c;
+  --color-genzic-dark-border: rgba(255, 255, 255, 0.08);
 
-  /* ---- Dark "ink" surface scale ---- */
-  --color-ink-900: #0d1117;
-  --color-ink-800: #131920;
-  --color-ink-700: #1a2230;
-  --color-ink-600: #252f40;
-  --color-ink-500: #3d4a5c;
+  --color-genzic-purple: #7028e0;
+  --color-genzic-purple-light: #9d68ff;
+  --color-genzic-purple-glow: #8b5cf6;
+  --color-genzic-purple-deep: #200a52;
+  --color-genzic-royal: #160a33;
 
-  /* ---- Light surface (Portfolio) ---- */
-  --color-paper: #f5f7fa;
-  --color-paper-line: #e2e8f0;
+  /* ---- Editorial Light Surfaces ---- */
+  --color-genzic-cream: #f5f4ef;
+  --color-genzic-cream-border: rgba(30, 10, 70, 0.12);
+  --color-genzic-cream-text: #1b0a3d;
+  --color-genzic-cream-muted: #645b77;
 
-  /* ---- Muted text ---- */
-  --color-muted: #6b7b8d;
-  --color-muted-2: #9aaabb;
+  /* ---- Lavender / Lilac Accent Surface ---- */
+  --color-genzic-lavender: #ded4fc;
+  --color-genzic-lavender-border: rgba(30, 8, 77, 0.15);
+  --color-genzic-lavender-text: #1a0845;
 
-  /* ---- Semantic ---- */
-  --color-positive: #22d3a0;
-  --color-negative: #f87171;
-
-  --font-display: "Plus Jakarta Sans", "Inter", ui-sans-serif, sans-serif;
-  --font-body: "Inter", ui-sans-serif, sans-serif;
+  /* ---- Typography ---- */
+  --font-display: "Plus Jakarta Sans", "Space Grotesk", sans-serif;
+  --font-body: "Inter", "Plus Jakarta Sans", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
 @layer base {
   * {
-    border-color: var(--color-ink-600);
     box-sizing: border-box;
   }
 
@@ -39,35 +39,28 @@
   }
 
   body {
-    background-color: var(--color-ink-900);
-    color: #e8edf3;
+    background-color: var(--color-genzic-dark);
+    color: #f1f0f7;
     font-family: var(--font-body);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
   }
 
-  h1, h2, h3, h4 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    font-weight: 800;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
   }
 
   ::selection {
-    background-color: var(--color-brand-teal);
-    color: var(--color-ink-900);
+    background-color: var(--color-genzic-purple);
+    color: #ffffff;
   }
 
-  :focus-visible {
-    outline: 2px solid var(--color-brand-teal);
-    outline-offset: 3px;
-    border-radius: 4px;
-  }
-
-  ::-webkit-scrollbar { width: 8px; }
-  ::-webkit-scrollbar-track { background: var(--color-ink-900); }
-  ::-webkit-scrollbar-thumb { background: var(--color-ink-600); border-radius: 999px; }
-  ::-webkit-scrollbar-thumb:hover { background: var(--color-ink-500); }
+  ::-webkit-scrollbar { width: 7px; }
+  ::-webkit-scrollbar-track { background: #08070e; }
+  ::-webkit-scrollbar-thumb { background: #261b40; border-radius: 999px; }
+  ::-webkit-scrollbar-thumb:hover { background: #3b2a63; }
 }
 
 @layer utilities {

@@ -1,127 +1,175 @@
-import { FaWhatsapp, FaTelegramPlane } from 'react-icons/fa';
-import { Mail, ArrowUpRight, ShieldCheck, Zap, Globe, Sparkles } from 'lucide-react';
-import { Container } from './ui.jsx';
+import { Mail, Phone, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { brand, contactSocials, footerLinks, footerAddress } from '../data/content.js';
-
-const socialIcons = {
-  whatsapp: FaWhatsapp,
-  telegram: FaTelegramPlane,
-  mail: Mail,
-};
-
-const columnIcons = {
-  Services: Zap,
-  Company: Globe,
-};
 
 export default function Footer() {
-  const year = new Date().getFullYear();
-
   return (
-    <footer className="relative bg-ink-900 pt-16 sm:pt-20 overflow-hidden">
-      {/* Top subtle border glow */}
-      <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-brand-teal/50 to-transparent opacity-50" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-[200px] bg-brand-blue/5 blur-[100px] rounded-full pointer-events-none" />
+    <footer className="bg-[#08070e] text-white pt-20 pb-12 border-t border-white/10 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header Bar */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b border-white/10 gap-4 text-xs font-mono tracking-widest text-white/50 uppercase mb-16">
+          <div className="flex items-center gap-6">
+            <span className="font-bold text-white">12</span>
+            <span>XARKODE / DIGITAL SOLUTIONS STUDIO</span>
+          </div>
+          <div>AI • SOFTWARE • GROWTH</div>
+        </div>
 
-      <Container className="relative z-10">
-        <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
-          
-          {/* Column 1: Brand & Newsletter */}
-          <div className="flex flex-col gap-6">
-            <Link to="/" className="inline-flex items-center gap-2 font-display text-2xl font-extrabold text-white tracking-tight">
-              <Sparkles className="text-brand-teal" size={24} />
-              {brand.short}<span className="text-gradient">{brand.accent}</span>
+        {/* Footer Main Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16">
+          {/* Brand & Studio Mission (Col 1) */}
+          <div className="lg:col-span-5 space-y-6">
+            <Link to="/" className="flex items-center gap-3 group">
+              <div className="w-8 h-8 flex items-center justify-center">
+                <svg viewBox="0 0 40 40" className="w-8 h-8 fill-none">
+                  <path d="M10 8 L24 8 L32 18 L18 18 Z" fill="#9d68ff" />
+                  <path d="M8 22 L22 22 L30 32 L16 32 Z" fill="#6d28d9" />
+                </svg>
+              </div>
+              <span className="font-display font-black text-2xl tracking-tight text-white uppercase">
+                XARKODE
+              </span>
             </Link>
-            <p className="max-w-xs text-sm leading-relaxed text-muted-2">
-              {brand.tagline}
+
+            <p className="text-sm text-white/60 max-w-sm leading-relaxed">
+              XarKode is a digital solutions studio helping businesses establish stronger digital credibility, streamline their operations, and create better customer experiences through strategy, design, software, automation, and digital growth.
             </p>
 
-            <form onSubmit={(e) => e.preventDefault()} className="relative max-w-sm mt-4">
-              <input
-                type="email"
-                placeholder="Join our newsletter"
-                className="w-full rounded-xl border border-white/10 bg-white/[0.02] pl-5 pr-12 py-3 text-sm text-white placeholder:text-white/30 backdrop-blur transition-all focus:border-brand-teal/50 focus:bg-white/[0.04] focus:outline-none"
-              />
-              <button
-                type="submit"
-                className="absolute right-1.5 top-1.5 bottom-1.5 flex aspect-square items-center justify-center rounded-lg bg-gradient-to-br from-brand-teal to-brand-blue text-ink-900 transition-transform hover:scale-105 shadow-[0_0_15px_rgba(46,230,197,0.3)]"
+            {/* Direct Contact */}
+            <div className="space-y-2 pt-2 text-xs font-mono text-white/80">
+              <a
+                href="mailto:contact@xarkode.com"
+                className="flex items-center gap-2 hover:text-[#8b5cf6] transition-colors"
               >
-                <ArrowUpRight size={16} strokeWidth={2.5} />
-              </button>
-            </form>
+                <Mail size={14} className="text-purple-400" />
+                <span>contact@xarkode.com</span>
+              </a>
+
+              <a
+                href="https://wa.me/923424808876"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-emerald-400 transition-colors"
+              >
+                <Phone size={14} className="text-emerald-400" />
+                <span>+92 342 4808876 on WhatsApp ↗</span>
+              </a>
+
+              <a
+                href="tel:+923424808876"
+                className="flex items-center gap-2 hover:text-white transition-colors"
+              >
+                <Phone size={14} className="text-purple-400" />
+                <span>+92 342 4808876</span>
+              </a>
+            </div>
+
+            {/* Social Links */}
+            <div className="pt-2 text-xs font-mono text-white/50 space-y-1">
+              <div className="uppercase tracking-wider font-bold text-white/30 text-[10px]">SOCIAL</div>
+              <div>
+                <a
+                  href="https://instagram.com/xarkode.official"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-purple-400 transition-colors"
+                >
+                  Instagram <span className="text-white/80">@xarkode.official</span>
+                </a>
+              </div>
+              <div>
+                <a
+                  href="https://facebook.com/xarkode.official"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-purple-400 transition-colors"
+                >
+                  Facebook <span className="text-white/80">@xarkode.official</span>
+                </a>
+              </div>
+            </div>
           </div>
 
-          {/* Dynamic Columns: Links */}
-          {Object.entries(footerLinks).map(([title, links]) => {
-            const Icon = columnIcons[title] || ShieldCheck;
-            return (
-              <div key={title} className="flex flex-col gap-5">
-                <div className="flex items-center gap-2">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/[0.03] border border-white/5 shadow-inner">
-                    <Icon size={14} className="text-brand-teal" />
-                  </div>
-                  <p className="text-sm font-bold uppercase tracking-wider text-white">{title}</p>
-                </div>
-                <ul className="flex flex-col gap-3">
-                  {links.map((link) => (
-                    <li key={link.label}>
-                      <Link to={link.href} className="group inline-flex items-center gap-2 text-sm font-medium text-muted-2 transition-colors hover:text-brand-teal">
-                        <span className="h-[1px] w-0 bg-brand-teal transition-all group-hover:w-3" />
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            );
-          })}
+          {/* Spacer */}
+          <div className="hidden lg:block lg:col-span-1" />
 
-          {/* Column 4: Socials */}
-          <div className="flex flex-col gap-5">
-            <div className="flex items-center gap-2">
-              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-white/[0.03] border border-white/5 shadow-inner">
-                <Mail size={14} className="text-brand-blue" />
-              </div>
-              <p className="text-sm font-bold uppercase tracking-wider text-white">Connect</p>
-            </div>
-            <ul className="flex flex-col gap-3">
-              {contactSocials.map((social) => {
-                const Icon = socialIcons[social.icon];
-                return (
-                  <li key={social.label}>
-                    <a
-                      href={social.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="group inline-flex items-center gap-3 text-sm font-medium text-muted-2 transition-colors hover:text-white"
-                    >
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/5 bg-white/[0.02] text-white/50 transition-all group-hover:border-brand-teal/40 group-hover:bg-brand-teal/10 group-hover:text-brand-teal group-hover:shadow-[0_0_12px_rgba(46,230,197,0.2)]">
-                        <Icon size={14} />
-                      </div>
-                      {social.label}
-                    </a>
-                  </li>
-                );
-              })}
+          {/* Services Column */}
+          <div className="lg:col-span-3 space-y-4">
+            <h4 className="text-xs font-mono uppercase tracking-widest text-white/40 font-bold">
+              SERVICES
+            </h4>
+            <ul className="space-y-2.5 text-sm text-white/70">
+              <li>
+                <a href="#solutions" className="hover:text-white transition-colors">
+                  Web Development
+                </a>
+              </li>
+              <li>
+                <a href="#solutions" className="hover:text-white transition-colors">
+                  Custom Business Systems
+                </a>
+              </li>
+              <li>
+                <a href="#solutions" className="hover:text-white transition-colors">
+                  AI and Workflow Automation
+                </a>
+              </li>
+              <li>
+                <a href="#solutions" className="hover:text-white transition-colors">
+                  Digital Growth
+                </a>
+              </li>
             </ul>
           </div>
 
+          {/* Company Column */}
+          <div className="lg:col-span-3 space-y-4">
+            <h4 className="text-xs font-mono uppercase tracking-widest text-white/40 font-bold">
+              COMPANY
+            </h4>
+            <ul className="space-y-2.5 text-sm text-white/70">
+              <li>
+                <a href="#work" className="hover:text-white transition-colors">
+                  Work
+                </a>
+              </li>
+              <li>
+                <a href="#about" className="hover:text-white transition-colors">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-white transition-colors">
+                  Contact
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-white transition-colors">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-white transition-colors">
+                  Terms
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        {/* Bottom Line */}
-        <div className="mt-16 flex flex-col gap-4 border-t border-white/10 py-6 text-xs font-medium text-muted-2 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-2">
-            <div className="h-1.5 w-1.5 rounded-full bg-brand-teal animate-pulse" />
-            <p>{footerAddress}</p>
-          </div>
-          <div className="flex items-center gap-6">
-            <Link to="#" className="transition-colors hover:text-brand-teal">Privacy</Link>
-            <Link to="#" className="transition-colors hover:text-brand-teal">Terms</Link>
-            <p className="text-white/30">© {year} {brand.name}</p>
+        {/* Giant Watermark Typography at bottom */}
+        <div className="pt-12 pb-6 border-t border-white/5 select-none overflow-hidden text-center">
+          <div className="font-display font-black text-[18vw] leading-none tracking-tighter text-white/[0.07] uppercase">
+            XARKODE
           </div>
         </div>
-      </Container>
+
+        {/* Bottom Credits Bar */}
+        <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-mono uppercase tracking-widest text-white/40">
+          <div>AI • SOFTWARE • GROWTH</div>
+          <div>© 2026 XARKODE. ALL RIGHTS RESERVED.</div>
+          <div>DESIGNED AND DEVELOPED BY XARKODE</div>
+        </div>
+      </div>
     </footer>
   );
 }

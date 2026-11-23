@@ -4,9 +4,7 @@ import Lenis from 'lenis';
 
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
-import Toaster from './components/Toaster.jsx';
-import BackToTop from './components/BackToTop.jsx';
-import Loader from './components/Loader.jsx';
+import FloatingWhatsApp from './components/FloatingWhatsApp.jsx';
 
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
@@ -21,8 +19,6 @@ import Blog from './pages/Blog.jsx';
 import BlogPost from './pages/BlogPost.jsx';
 import PortfolioPage from './pages/PortfolioPage.jsx';
 
-import AiChat from './components/AiChat.jsx';
-
 function ScrollToTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -33,7 +29,7 @@ function ScrollToTop() {
 
 export default function App() {
   useEffect(() => {
-    // Initialize Lenis for premium smooth scrolling
+    // Initialize Lenis for smooth scrolling
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -61,18 +57,17 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <Loader />
-      <div className="min-h-screen bg-ink-900">
+      <div className="min-h-screen bg-[#08070e] text-white">
         <Navbar />
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
+            <Route path="/about" element={<Home />} />
+            <Route path="/services" element={<Home />} />
             <Route path="/why-us" element={<WhyUs />} />
             <Route path="/reviews" element={<Reviews />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/faq" element={<Home />} />
+            <Route path="/contact" element={<Home />} />
             <Route path="/quote" element={<Quote />} />
             <Route path="/portfolio" element={<PortfolioPage />} />
             <Route path="/work/:projectId" element={<CaseStudy />} />
@@ -81,9 +76,7 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
-        <AiChat />
-        <Toaster />
-        <BackToTop />
+        <FloatingWhatsApp />
       </div>
     </BrowserRouter>
   );
