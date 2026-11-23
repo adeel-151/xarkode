@@ -36,7 +36,7 @@ export default function DirectByDesign() {
             </div>
 
             <p className="text-sm sm:text-base text-[#4a405c] leading-relaxed">
-              Adeel Qaiser leads XarKode&apos;s strategy, design, development, and digital-solutions work. Clients communicate directly with the person responsible for understanding their requirements, planning the solution, and overseeing its delivery.
+              Adeel Qaiser leads XarKode&apos;s engineering, architecture, and digital-solutions work. Clients communicate directly with the founder responsible for understanding their business model, engineering the foundation beneath their digital growth, and overseeing execution.
             </p>
 
             <div className="border-l-2 border-[#7028e0] pl-4 py-1 text-sm font-medium text-[#180838]">
@@ -44,7 +44,7 @@ export default function DirectByDesign() {
             </div>
 
             <div className="pt-2 text-xs font-mono tracking-widest uppercase text-[#645b77]">
-              STRATEGY &nbsp;/&nbsp; DESIGN &nbsp;/&nbsp; DEVELOPMENT &nbsp;/&nbsp; GROWTH
+              WEB & APP &nbsp;/&nbsp; SAAS &nbsp;/&nbsp; AUTOMATION &nbsp;/&nbsp; GROWTH
             </div>
 
             <div className="pt-4">

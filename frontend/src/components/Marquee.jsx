@@ -1,20 +1,20 @@
 export default function Marquee() {
   const itemsTop = [
-    'Web development',
-    'Business systems',
-    'AI automation',
-    'Digital strategy',
-    'Custom web systems',
-    'High-performance web apps',
+    'Web & App Development',
+    'SaaS Development',
+    'AI & Automations',
+    'Graphic & UI/UX Design',
+    'Digital Growth',
+    'Cloud Architecture',
   ];
 
   const itemsBottom = [
-    'Digital growth',
-    'Business AI agents',
-    'Smart tech integrations',
-    'Custom business portals',
-    'Automated workflows',
-    'Cinematic experiences',
+    'Your Partner in the Digital Sphere',
+    'High-Performance Web Experiences',
+    'Scalable SaaS Systems',
+    'Smart AI Workflows',
+    'Visual Identities that Convert',
+    'The Foundation Beneath Your Growth',
   ];
 
   return (

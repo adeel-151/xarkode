@@ -8,7 +8,7 @@ export default function BrandManifesto() {
             <span className="font-bold text-[#180838]">02</span>
             <span>BRAND MANIFESTO</span>
           </div>
-          <div>STRATEGY / DESIGN / ENGINEERING / AUTOMATION</div>
+          <div>WEB & APP / SAAS / AI AUTOMATION / DESIGN</div>
         </div>
 
         {/* Section Content */}
@@ -33,10 +33,10 @@ export default function BrandManifesto() {
 
             <div className="bg-white/60 p-6 sm:p-8 rounded-none border border-[#180838]/10 space-y-4 shadow-sm backdrop-blur-sm">
               <div className="text-xs font-mono font-bold tracking-widest uppercase text-[#7028e0]">
-                A DIGITAL STUDIO FOR BUSINESSES WITH SOMEWHERE TO GO.
+                YOUR PARTNER IN THE DIGITAL SPHERE.
               </div>
               <p className="text-sm sm:text-base text-[#473e58] font-normal leading-relaxed">
-                We combine strategy, design, engineering, and automation to build digital systems that help businesses earn attention, establish trust, and operate better.
+                XarKode is a premium digital agency that builds the foundation beneath your digital growth. We engineer digital ecosystems that don&apos;t just look beautiful, but actively drive growth, automate workflows, and scale your business to new heights.
               </p>
             </div>
           </div>

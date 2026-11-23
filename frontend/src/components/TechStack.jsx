@@ -14,10 +14,10 @@ export default function TechStack() {
 
   const industries = [
     'Clinics & Healthcare',
-    'Education & Admissions',
-    'Construction & Accounting',
-    'Automotive Services',
+    'SaaS & Startups',
     'E-commerce & Retail',
+    'Construction & Real Estate',
+    'Logistics & Automotive',
   ];
 
   const practices = [

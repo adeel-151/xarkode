@@ -31,7 +31,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-sm text-white/60 max-w-sm leading-relaxed">
-              XarKode is a digital solutions studio helping businesses establish stronger digital credibility, streamline their operations, and create better customer experiences through strategy, design, software, automation, and digital growth.
+              XarKode is a premium digital agency that builds the foundation beneath your digital growth. We engineer digital ecosystems that actively drive growth, automate workflows, and scale your business to new heights.
             </p>
 
             {/* Direct Contact */}
@@ -99,22 +99,27 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-sm text-white/70">
               <li>
-                <a href="#solutions" className="hover:text-white transition-colors">
-                  Web Development
+                <a href="#services" className="hover:text-white transition-colors">
+                  Web & App Development
                 </a>
               </li>
               <li>
-                <a href="#solutions" className="hover:text-white transition-colors">
-                  Custom Business Systems
+                <a href="#services" className="hover:text-white transition-colors">
+                  SaaS Development
                 </a>
               </li>
               <li>
-                <a href="#solutions" className="hover:text-white transition-colors">
-                  AI and Workflow Automation
+                <a href="#services" className="hover:text-white transition-colors">
+                  AI & Automations
                 </a>
               </li>
               <li>
-                <a href="#solutions" className="hover:text-white transition-colors">
+                <a href="#services" className="hover:text-white transition-colors">
+                  Graphic & UI/UX Design
+                </a>
+              </li>
+              <li>
+                <a href="#services" className="hover:text-white transition-colors">
                   Digital Growth
                 </a>
               </li>

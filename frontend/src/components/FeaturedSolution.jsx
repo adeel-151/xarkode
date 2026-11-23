@@ -1,14 +1,14 @@
-import { ArrowUpRight, Calendar, Users, FileText, Activity, CreditCard, MessageSquare, CheckCircle } from 'lucide-react';
+import { ArrowUpRight, Globe, Cloud, Bot, MessageSquare, CreditCard, BarChart3, ShieldCheck } from 'lucide-react';
 
 export default function FeaturedSolution() {
   const operations = [
-    { icon: <Calendar size={16} />, title: 'Website appointment bookings' },
-    { icon: <Users size={16} />, title: 'Available appointment slots' },
-    { icon: <FileText size={16} />, title: 'Patient information' },
-    { icon: <Activity size={16} />, title: 'Treatments and follow-ups' },
-    { icon: <CreditCard size={16} />, title: 'Payments and remaining balances' },
-    { icon: <MessageSquare size={16} />, title: 'WhatsApp communication' },
-    { icon: <CheckCircle size={16} />, title: 'Reports and operations' },
+    { icon: <Globe size={16} />, title: 'High-Performance Web & Mobile Applications' },
+    { icon: <Cloud size={16} />, title: 'Multi-Tenant SaaS Cloud Database & APIs' },
+    { icon: <Bot size={16} />, title: 'Autonomous AI Workflow Agents (24/7)' },
+    { icon: <MessageSquare size={16} />, title: 'WhatsApp & Omnichannel CRM Notification Engine' },
+    { icon: <CreditCard size={16} />, title: 'Automated Billing & Secure Payment Gateways' },
+    { icon: <BarChart3 size={16} />, title: 'Real-Time Telemetry & Conversion Analytics' },
+    { icon: <ShieldCheck size={16} />, title: 'Enterprise-Grade Security & Automated Backups' },
   ];
 
   return (
@@ -26,9 +26,9 @@ export default function FeaturedSolution() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b border-white/10 gap-4 text-xs font-mono tracking-widest text-purple-300 uppercase">
           <div className="flex items-center gap-6">
             <span className="font-bold text-white">06</span>
-            <span>FEATURED SOLUTION</span>
+            <span>FEATURED ECOSYSTEM</span>
           </div>
-          <div>MANAGEMENT SYSTEMS + AI AGENTS</div>
+          <div>UNIFIED DIGITAL INFRASTRUCTURE</div>
         </div>
 
         {/* Content Grid */}
@@ -37,18 +37,18 @@ export default function FeaturedSolution() {
           <div className="lg:col-span-5 space-y-8">
             <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-purple-400 uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
-              <span>FEATURED SOLUTION</span>
+              <span>DIGITAL INFRASTRUCTURE</span>
             </div>
 
             <h2 className="font-display font-black text-5xl sm:text-6xl lg:text-[4.8rem] leading-[0.92] tracking-tighter uppercase text-white">
-              BUSINESS<br />
+              DIGITAL<br />
               SYSTEMS<br />
               <span className="text-[#a78bfa]">BUILT TO</span><br />
-              WORK.
+              SCALE.
             </h2>
 
             <p className="text-white/75 text-base sm:text-lg leading-relaxed">
-              We build custom management systems for your business and practical AI agents that handle repetitive work. This Clinic Management System is one example—connecting public bookings to the work happening behind them.
+              We engineer complete digital ecosystems. From client-facing web and mobile applications to backend multi-tenant SaaS platforms and autonomous AI agents that eliminate manual drag.
             </p>
 
             <div className="pt-2">
@@ -56,7 +56,7 @@ export default function FeaturedSolution() {
                 href="#contact"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-black transition-all hover:bg-neutral-200 hover:scale-[1.02] shadow-[0_0_30px_rgba(255,255,255,0.25)]"
               >
-                <span>Explore the Clinic Management System</span>
+                <span>Explore the Digital Ecosystem</span>
                 <ArrowUpRight size={16} strokeWidth={2.5} />
               </a>
             </div>
@@ -67,7 +67,7 @@ export default function FeaturedSolution() {
             <div className="bg-[#0e0724]/90 border border-purple-500/30 rounded-none p-6 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.6)] backdrop-blur-xl">
               {/* Architecture Header */}
               <div className="flex items-center justify-between pb-6 border-b border-white/10 text-xs font-mono uppercase tracking-wider text-purple-300">
-                <span>XARKODE / PRODUCT ARCHITECTURE</span>
+                <span>XARKODE / ECOSYSTEM ARCHITECTURE</span>
                 <span>CONNECTED OPERATIONS</span>
               </div>
 
@@ -77,9 +77,9 @@ export default function FeaturedSolution() {
                   <div className="w-8 h-8 rounded-none bg-white text-[#160a33] font-bold font-display flex items-center justify-center mx-auto mb-2 text-sm shadow">
                     X
                   </div>
-                  <h4 className="font-display font-bold text-lg text-white">Clinic Management System</h4>
+                  <h4 className="font-display font-bold text-lg text-white">XarKode Digital Engine</h4>
                   <div className="text-[10px] font-mono uppercase tracking-widest text-purple-300 mt-1">
-                    ONE CONNECTED WORKFLOW
+                    UNIFIED DIGITAL OPERATIONS
                   </div>
                 </div>
               </div>

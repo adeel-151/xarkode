@@ -16,7 +16,7 @@ export default function Hero() {
         <div className="flex items-center justify-between py-6 border-b border-white/10 mb-10 text-xs font-mono tracking-widest text-white/60">
           <div className="flex items-center gap-2 uppercase">
             <span className="w-1.5 h-1.5 rounded-full bg-[#8b5cf6]" />
-            <span>XARKODE — DIGITAL SOLUTIONS STUDIO</span>
+            <span>XARKODE — YOUR PARTNER IN THE DIGITAL SPHERE</span>
           </div>
           <div>01 / 03</div>
         </div>
@@ -25,17 +25,15 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Big Typography & Actions */}
           <div className="lg:col-span-7 flex flex-col space-y-8">
-            <h1 className="font-display font-black text-5xl sm:text-6xl md:text-7xl lg:text-[5.2rem] leading-[0.92] tracking-tighter uppercase text-white">
-              WE BUILD<br />
-              DIGITAL<br />
-              <span className="text-[#8b5cf6]">EXPERIENCES</span><br />
-              THAT MOVE<br />
-              BUSINESSES<br />
-              <span className="text-[#8b5cf6]">FORWARD.</span>
+            <h1 className="font-display font-black text-5xl sm:text-6xl md:text-7xl lg:text-[5.1rem] leading-[0.92] tracking-tighter uppercase text-white">
+              THE FOUNDATION<br />
+              BENEATH<br />
+              <span className="text-[#8b5cf6]">YOUR DIGITAL</span><br />
+              GROWTH.
             </h1>
 
             <p className="text-white/70 text-base sm:text-lg max-w-xl font-normal leading-relaxed">
-              Websites, business systems, and intelligent automation designed for brands that expect more than an ordinary digital presence.
+              We connect your digital presence, automate your workflows, and build the infrastructure that keeps your business scaling — visibly and beneath the surface.
             </p>
 
             {/* Action Buttons */}
@@ -96,53 +94,53 @@ export default function Hero() {
                 <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-5">
                   <div className="flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-[#8b5cf6]" />
-                    <span className="text-[11px] font-mono tracking-wider uppercase text-white/80">XARKODE / CLINIC SYSTEM</span>
+                    <span className="text-[11px] font-mono tracking-wider uppercase text-white/80">XARKODE / DIGITAL ECOSYSTEM</span>
                   </div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-white/40">STUDIO COMPOSITION</span>
+                  <span className="text-[10px] font-mono uppercase tracking-wider text-white/40">SYSTEM ARCHITECTURE</span>
                 </div>
 
                 {/* Card Body */}
                 <div className="space-y-4">
                   <div className="flex items-baseline justify-between">
                     <div>
-                      <div className="text-[10px] font-mono uppercase tracking-widest text-[#8b5cf6]">BUILT AROUND THE BUSINESS</div>
-                      <h4 className="font-display font-bold text-xl text-white mt-1">One connected system.</h4>
+                      <div className="text-[10px] font-mono uppercase tracking-widest text-[#8b5cf6]">ENGINEERED FOR SCALE</div>
+                      <h4 className="font-display font-bold text-xl text-white mt-1">One unified platform.</h4>
                     </div>
                     <span className="text-[10px] font-mono px-2 py-0.5 rounded-none bg-purple-500/20 text-purple-300 border border-purple-500/30">
-                      • Conceptual
+                      • Production
                     </span>
                   </div>
 
                   {/* Inner Workflow Map Box */}
                   <div className="bg-[#0b0818] border border-white/10 rounded-none p-4 space-y-4">
                     <div className="flex items-center justify-between text-xs font-mono uppercase text-white/60">
-                      <span>WORKFLOW MAP</span>
+                      <span>CORE ARCHITECTURE</span>
                       <Calendar size={14} className="text-purple-400" />
                     </div>
 
-                    {/* Appointments Day Selector */}
+                    {/* Service Pillars Selector */}
                     <div>
-                      <div className="text-[11px] text-white/50 mb-2">Appointments</div>
-                      <div className="grid grid-cols-5 gap-1.5 text-center text-xs">
-                        {['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].map((day) => (
+                      <div className="text-[11px] text-white/50 mb-2">Active Modules</div>
+                      <div className="grid grid-cols-4 gap-1.5 text-center text-xs">
+                        {['Web', 'Apps', 'SaaS', 'AI'].map((mod) => (
                           <div
-                            key={day}
+                            key={mod}
                             className={`py-1.5 rounded-none font-medium text-[11px] transition-colors ${
-                              day === 'Wed'
+                              mod === 'SaaS' || mod === 'AI'
                                 ? 'bg-[#7028e0] text-white font-bold shadow-sm'
                                 : 'bg-white/5 text-white/60 hover:bg-white/10'
                             }`}
                           >
-                            {day}
+                            {mod}
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    {/* Sub cards: Patient Workspace & Follow-ups */}
+                    {/* Sub cards: Workflows & Automations */}
                     <div className="grid grid-cols-2 gap-3 pt-1">
                       <div className="bg-white/[0.03] border border-white/10 rounded-none p-3">
-                        <div className="text-[10px] text-white/50 mb-1.5">Patient workspace</div>
+                        <div className="text-[10px] text-white/50 mb-1.5">Cloud Database</div>
                         <div className="space-y-1.5">
                           <div className="h-1.5 bg-white/20 rounded-full w-full" />
                           <div className="h-1.5 bg-purple-500/50 rounded-full w-3/4" />
@@ -150,10 +148,10 @@ export default function Hero() {
                       </div>
 
                       <div className="bg-white/[0.03] border border-white/10 rounded-none p-3">
-                        <div className="text-[10px] text-white/50 mb-1.5">Follow-ups</div>
+                        <div className="text-[10px] text-white/50 mb-1.5">Smart Automations</div>
                         <div className="flex items-center gap-1.5 text-[11px] font-medium text-emerald-400">
                           <MessageCircle size={13} />
-                          <span>WhatsApp</span>
+                          <span>Active 24/7</span>
                         </div>
                       </div>
                     </div>
@@ -163,7 +161,7 @@ export default function Hero() {
                 {/* Subtag */}
                 <div className="mt-5 text-right">
                   <span className="text-[10px] font-mono uppercase tracking-widest text-purple-400">
-                    ↘ DESIGN / SYSTEMS / GROWTH
+                    ↘ WEB / SAAS / AUTOMATION
                   </span>
                 </div>
               </div>
@@ -173,7 +171,7 @@ export default function Hero() {
 
         {/* Hero Bottom Bar */}
         <div className="border-t border-white/10 mt-16 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono uppercase tracking-widest text-white/50">
-          <div>WEB / SYSTEMS / AUTOMATION</div>
+          <div>WEB & APP / SAAS / AI AUTOMATIONS / UI/UX</div>
           <div className="flex items-center gap-2 text-white/70">
             <span>SCROLL TO EXPLORE</span>
           </div>

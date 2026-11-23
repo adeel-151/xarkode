@@ -145,10 +145,11 @@ export default function ProjectInquiry() {
                       className="w-full px-4 py-3 rounded-none bg-purple-50/50 border border-purple-200/80 text-sm text-[#1a0845] focus:outline-none focus:ring-2 focus:ring-[#7028e0] focus:bg-white transition-all"
                     >
                       <option value="">Choose a service</option>
-                      <option value="Web Development">Web Development</option>
-                      <option value="Custom Business Systems">Custom Business Systems</option>
-                      <option value="AI and Workflow Automation">AI and Workflow Automation</option>
-                      <option value="Digital Growth & Identity">Digital Growth & Identity</option>
+                      <option value="Web & App Development">Web & App Development</option>
+                      <option value="SaaS Development & Cloud Architecture">SaaS Development & Cloud Architecture</option>
+                      <option value="AI & Workflow Automations">AI & Workflow Automations</option>
+                      <option value="Graphic & UI/UX Design">Graphic & UI/UX Design</option>
+                      <option value="Digital Growth & Strategy">Digital Growth & Strategy</option>
                       <option value="Complete Digital Ecosystem">Complete Digital Ecosystem</option>
                     </select>
                   </div>

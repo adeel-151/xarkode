@@ -1,68 +1,77 @@
-import { ArrowUpRight, Code, LayoutGrid, Bot, Activity } from 'lucide-react';
+import { ArrowUpRight, Code, Cloud, Bot, Palette, TrendingUp } from 'lucide-react';
 
 export default function SolutionsWithIntent() {
   const capabilities = [
     {
       num: '01',
       icon: <Code size={18} className="text-[#7028e0]" />,
-      name: 'Web Development',
-      tagline: 'Websites that turn visitors into qualified inquiries',
+      name: 'Web & App Development',
+      tagline: 'High-performance, cinematic web & mobile experiences',
       covers:
-        'Modern, responsive, conversion-focused websites designed to strengthen business credibility, improve customer experience, and generate qualified inquiries.',
-      outcome: 'More qualified inquiries',
+        'Modern responsive web applications, iOS and Android mobile apps, e-commerce platforms, PWAs, and custom portals engineered for speed, conversion, and fluid interaction.',
+      outcome: 'High conversion & engagement',
     },
     {
       num: '02',
-      icon: <LayoutGrid size={18} className="text-[#7028e0]" />,
-      name: 'Custom Business Systems',
-      tagline: 'Dashboards that run your operations',
+      icon: <Cloud size={18} className="text-[#7028e0]" />,
+      name: 'SaaS Development',
+      tagline: 'End-to-end cloud platforms & architecture',
       covers:
-        'designed around real operational workflows, reporting requirements, bookings, customers, payments, and administration.',
-      outcome: 'Easier business management',
+        'Complete Software as a Service architecture, scalable multi-tenant databases, secure REST/GraphQL API integrations, subscription billing systems, and cloud deployment.',
+      outcome: 'Enterprise-grade scalability',
     },
     {
       num: '03',
       icon: <Bot size={18} className="text-[#7028e0]" />,
-      name: 'AI and Workflow Automation',
-      tagline: 'Automation that handles the repetitive work',
+      name: 'AI & Automation Systems',
+      tagline: 'Smart workflows that eliminate manual work',
       covers:
-        'Practical automation for inquiries, follow-ups, reporting, reminders, internal processes, and repetitive business tasks.',
-      outcome: 'Reduced overhead & zero lost leads',
+        'Practical custom AI tools, autonomous agents, automated customer inquiry handling, instant WhatsApp/email triggers, CRM pipelines, and cross-platform data integration.',
+      outcome: 'Hundreds of hours saved',
     },
     {
       num: '04',
-      icon: <Activity size={18} className="text-[#7028e0]" />,
-      name: 'Digital Growth',
-      tagline: 'Digital identity and growth campaigns',
+      icon: <Palette size={18} className="text-[#7028e0]" />,
+      name: 'Graphic & UI/UX Design',
+      tagline: 'Premium visual identities that captivate and convert',
       covers:
-        'Digital strategy, campaign direction, social media content, and online experiences designed to help businesses attract attention and grow consistently.',
-      outcome: 'Stronger digital credibility',
+        'Brand identity, cinematic UI/UX design systems, motion graphics, and interactive design that establish immediate digital credibility and premium visual authority.',
+      outcome: 'Unrivaled brand authority',
+    },
+    {
+      num: '05',
+      icon: <TrendingUp size={18} className="text-[#7028e0]" />,
+      name: 'Digital Growth',
+      tagline: 'Predictable digital expansion & reach',
+      covers:
+        'Full-funnel digital strategy, conversion rate optimization, campaign architecture, and online experiences designed to help modern businesses scale consistently.',
+      outcome: 'Predictable scaling & leads',
     },
   ];
 
   return (
-    <section id="solutions" className="bg-[#f5f4ef] text-[#180838] py-24 border-b border-[#180838]/10">
+    <section id="services" className="bg-[#f5f4ef] text-[#180838] py-24 border-b border-[#180838]/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Bar */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b border-[#180838]/15 gap-4 text-xs font-mono tracking-widest text-[#645b77] uppercase">
           <div className="flex items-center gap-6">
             <span className="font-bold text-[#180838]">05</span>
-            <span>CAPABILITIES</span>
+            <span>SERVICES & CAPABILITIES</span>
           </div>
-          <div>WHAT WE BUILD</div>
+          <div>WHAT WE ENGINEER</div>
         </div>
 
         {/* Heading & Subtitle */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-14 pb-14 items-end">
           <div className="lg:col-span-7">
             <h2 className="font-display font-black text-5xl sm:text-6xl lg:text-[5.5rem] leading-[0.92] tracking-tighter uppercase text-[#180838]">
-              SOLUTIONS<br />
+              SERVICES<br />
               <span className="text-[#7028e0]">WITH INTENT.</span>
             </h2>
           </div>
           <div className="lg:col-span-5">
             <p className="text-sm sm:text-base text-[#524962] leading-relaxed max-w-md">
-              Design and technology connected to a business outcome—not a collection of features looking for a reason to exist.
+              We connect your digital presence, automate your workflows, and build the infrastructure that keeps your business scaling.
             </p>
           </div>
         </div>
