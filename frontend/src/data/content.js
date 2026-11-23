@@ -209,9 +209,9 @@ export const faqItems = [
 export const outcomeBadges = ['Cleaner', 'Stronger', 'More Modern', 'More Quality', 'More Profitable', 'Scalable'];
 
 export const contactSocials = [
-  { label: 'WhatsApp', href: 'https://wa.me/10000000000', icon: 'whatsapp' },
+  { label: 'WhatsApp', href: 'https://wa.me/923015355509', icon: 'whatsapp' },
   { label: 'Telegram', href: 'https://t.me/xarkode', icon: 'telegram' },
-  { label: 'Email', href: 'mailto:hello@xarkode.com', icon: 'mail' },
+  { label: 'Email', href: 'mailto:xarkodesolutions@gmail.com', icon: 'mail' },
 ];
 
 export const footerLinks = {
@@ -231,7 +231,7 @@ export const footerLinks = {
     { label: 'AI & Automations', href: '/services' },
   ],
   Socials: [
-    { label: 'Instagram', href: 'https://instagram.com' },
+    { label: 'Instagram', href: 'https://instagram.com/xar_kode' },
     { label: 'TikTok', href: 'https://tiktok.com' },
     { label: 'Facebook', href: 'https://facebook.com' },
     { label: 'Threads', href: 'https://threads.net' },

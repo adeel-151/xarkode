@@ -37,29 +37,29 @@ export default function Footer() {
             {/* Direct Contact */}
             <div className="space-y-2 pt-2 text-xs font-mono text-white/80">
               <a
-                href="mailto:contact@xarkode.com"
+                href="mailto:xarkodesolutions@gmail.com"
                 className="flex items-center gap-2 hover:text-[#8b5cf6] transition-colors"
               >
                 <Mail size={14} className="text-purple-400" />
-                <span>contact@xarkode.com</span>
+                <span>xarkodesolutions@gmail.com</span>
               </a>
 
               <a
-                href="https://wa.me/923424808876"
+                href="https://wa.me/923015355509"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-emerald-400 transition-colors"
               >
                 <Phone size={14} className="text-emerald-400" />
-                <span>+92 342 4808876 on WhatsApp ↗</span>
+                <span>+92 301 5355509 on WhatsApp ↗</span>
               </a>
 
               <a
-                href="tel:+923424808876"
+                href="tel:+923015355509"
                 className="flex items-center gap-2 hover:text-white transition-colors"
               >
                 <Phone size={14} className="text-purple-400" />
-                <span>+92 342 4808876</span>
+                <span>0301 5355509</span>
               </a>
             </div>
 
@@ -68,12 +68,12 @@ export default function Footer() {
               <div className="uppercase tracking-wider font-bold text-white/30 text-[10px]">SOCIAL</div>
               <div>
                 <a
-                  href="https://instagram.com/xarkode.official"
+                  href="https://instagram.com/xar_kode"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-purple-400 transition-colors"
                 >
-                  Instagram <span className="text-white/80">@xarkode.official</span>
+                  Instagram <span className="text-white/80">@xar_kode</span>
                 </a>
               </div>
               <div>

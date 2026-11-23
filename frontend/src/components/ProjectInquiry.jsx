@@ -64,7 +64,7 @@ export default function ProjectInquiry() {
 
             <div className="pt-2">
               <a
-                href="https://wa.me/923424808876"
+                href="https://wa.me/923015355509"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm font-bold text-[#1a0845] hover:text-[#641ae6] transition-colors"

@@ -4,7 +4,7 @@ export default function FloatingWhatsApp() {
   return (
     <aside aria-label="WhatsApp Contact" className="fixed bottom-6 right-6 z-50">
       <a
-        href="https://wa.me/923424808876"
+        href="https://wa.me/923015355509"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with XarKode on WhatsApp"
