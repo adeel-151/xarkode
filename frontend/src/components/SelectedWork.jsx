@@ -162,7 +162,7 @@ export default function SelectedWork() {
               <button
                 key={proj.id}
                 onClick={() => setActiveIdx(idx)}
-                className={`px-5 py-3.5 text-xs font-mono uppercase tracking-wider rounded-none transition-all cursor-pointer flex items-center gap-3 ${
+                className={`w-full sm:w-auto px-4 py-3 sm:px-5 sm:py-3.5 text-xs font-mono uppercase tracking-wider rounded-none transition-all cursor-pointer flex items-center justify-between sm:justify-start gap-3 ${
                   isActive
                     ? 'bg-[#1a0845] text-white font-bold shadow-md'
                     : 'bg-white/70 text-[#5a4488] hover:bg-white hover:text-[#1a0845] border border-[#1a0845]/15'

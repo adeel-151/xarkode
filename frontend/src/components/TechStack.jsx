@@ -226,11 +226,11 @@ export default function TechStack() {
         </div>
 
         {/* Upgraded Tech Cards Grid with Architectural Details */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-2.5 sm:gap-3.5">
           {filteredTech.map((item) => (
             <div
               key={item.name}
-              className="group flex flex-col justify-between p-5 rounded-none bg-white/80 border border-[#180838]/10 hover:border-[#7028e0]/60 hover:bg-white hover:shadow-[0_12px_30px_rgba(30,8,77,0.08)] transition-all duration-300 relative overflow-hidden"
+              className="group flex flex-col justify-between p-3.5 sm:p-5 rounded-none bg-white/80 border border-[#180838]/10 hover:border-[#7028e0]/60 hover:bg-white hover:shadow-[0_12px_30px_rgba(30,8,77,0.08)] transition-all duration-300 relative overflow-hidden"
             >
               {/* Top Row: Number & Icon */}
               <div className="flex items-center justify-between pb-3 border-b border-[#180838]/10">
@@ -333,7 +333,7 @@ export default function TechStack() {
             {practices.map((prac) => (
               <div
                 key={prac.num}
-                className="p-6 bg-white/70 border border-[#180838]/10 rounded-none space-y-3 hover:border-[#7028e0]/40 transition-colors"
+                className="p-4 sm:p-6 bg-white/70 border border-[#180838]/10 rounded-none space-y-3 hover:border-[#7028e0]/40 transition-colors"
               >
                 <div className="flex items-center justify-between pb-3 border-b border-[#180838]/10">
                   <span className="text-xl font-display font-black text-[#7028e0]">

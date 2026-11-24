@@ -91,28 +91,29 @@ export default function SolutionsWithIntent() {
           {capabilities.map((cap) => (
             <div
               key={cap.num}
-              className="group grid grid-cols-1 lg:grid-cols-12 gap-4 py-7 items-center transition-colors hover:bg-black/[0.02] px-2 rounded-none"
+              className="group grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 py-5 sm:py-7 items-start lg:items-center transition-colors hover:bg-black/[0.02] px-2 rounded-none"
             >
-              {/* Number */}
-              <div className="lg:col-span-1 text-xs font-mono font-bold text-[#736a88]">
+              {/* Number (Desktop) */}
+              <div className="hidden lg:block lg:col-span-1 text-xs font-mono font-bold text-[#736a88]">
                 {cap.num}
               </div>
 
               {/* Capability Name & Mini-tagline */}
               <div className="lg:col-span-3">
-                <div className="flex items-center gap-2">
-                  <span className="p-1 rounded bg-purple-100 text-[#7028e0]">{cap.icon}</span>
-                  <h4 className="font-display font-bold text-lg sm:text-xl text-[#180838] group-hover:text-[#7028e0] transition-colors">
+                <div className="flex items-center gap-2.5">
+                  <span className="lg:hidden text-xs font-mono font-bold text-[#7028e0]">{cap.num}</span>
+                  <span className="p-1 rounded-none bg-purple-100 text-[#7028e0]">{cap.icon}</span>
+                  <h4 className="font-display font-bold text-base sm:text-xl text-[#180838] group-hover:text-[#7028e0] transition-colors">
                     {cap.name}
                   </h4>
                 </div>
-                <div className="text-xs text-[#736a88] mt-1 font-mono">
+                <div className="text-[11px] sm:text-xs text-[#736a88] mt-1 font-mono">
                   {cap.tagline}
                 </div>
               </div>
 
               {/* What it Covers */}
-              <div className="lg:col-span-5 text-sm text-[#4d445e] leading-relaxed">
+              <div className="lg:col-span-5 text-xs sm:text-sm text-[#4d445e] leading-relaxed">
                 {cap.covers}
               </div>
 
@@ -122,13 +123,13 @@ export default function SolutionsWithIntent() {
               </div>
 
               {/* Action Button */}
-              <div className="lg:col-span-1 flex justify-end">
+              <div className="lg:col-span-1 flex justify-start lg:justify-end pt-1 lg:pt-0">
                 <a
                   href="#contact"
-                  className="w-9 h-9 rounded-full border border-[#180838]/15 flex items-center justify-center text-[#180838] group-hover:bg-[#7028e0] group-hover:text-white group-hover:border-[#7028e0] transition-all"
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-none border border-[#180838]/15 flex items-center justify-center text-[#180838] group-hover:bg-[#7028e0] group-hover:text-white group-hover:border-[#7028e0] transition-all"
                   aria-label={`Inquire about ${cap.name}`}
                 >
-                  <ArrowUpRight size={16} />
+                  <ArrowUpRight size={15} />
                 </a>
               </div>
             </div>

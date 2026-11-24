@@ -28,12 +28,12 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-center my-auto">
         {/* Top Metadata Line */}
-        <div className="flex items-center justify-between py-6 border-b border-white/10 mb-10 text-xs font-mono tracking-widest text-white/60">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between py-6 border-b border-white/10 mb-10 text-xs font-mono tracking-widest text-white/60 gap-2">
           <div className="flex items-center gap-2 uppercase">
             <span className="w-1.5 h-1.5 rounded-full bg-[#a78bfa]" />
             <span>XARKODE — YOUR PARTNER IN THE DIGITAL SPHERE</span>
           </div>
-          <div>01 / 03</div>
+          <div className="hidden sm:block">01 / 03</div>
         </div>
 
         {/* Hero Grid */}
@@ -83,11 +83,11 @@ export default function Hero() {
           </div>
 
           {/* Right Column: Layered Interactive 3D Perspective Graphic */}
-          <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
+          <div className="lg:col-span-5 relative flex justify-center lg:justify-end w-full">
             <div className="relative w-full max-w-[460px] perspective-1000 pt-8 pb-4">
               {/* Layer 1: Angled Background Card ("Digital growth") - Semi-transparent Frosted Glass */}
               <div 
-                className="absolute -top-4 right-0 w-[85%] bg-[#f5f4ef]/80 backdrop-blur-md border border-white/30 text-[#1b0a3d] rounded-none p-6 shadow-2xl transform rotate-3 transition-transform duration-500 hover:rotate-1"
+                className="hidden sm:block absolute -top-4 right-0 w-[85%] bg-[#f5f4ef]/80 backdrop-blur-md border border-white/30 text-[#1b0a3d] rounded-none p-6 shadow-2xl transform rotate-3 transition-transform duration-500 hover:rotate-1"
                 style={{ zIndex: 1 }}
               >
                 <div className="flex items-center justify-between border-b border-black/10 pb-3 mb-4">

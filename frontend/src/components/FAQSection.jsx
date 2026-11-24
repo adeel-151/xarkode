@@ -94,21 +94,21 @@ export default function FAQSection() {
                 >
                   <div className="flex items-center gap-4 sm:gap-6">
                     <span className="text-xs font-mono font-bold text-[#736a88]">{faq.num}</span>
-                    <h3 className="font-display font-bold text-lg sm:text-xl text-[#180838] group-hover:text-[#7028e0] transition-colors">
+                    <h3 className="font-display font-bold text-base sm:text-xl text-[#180838] group-hover:text-[#7028e0] transition-colors">
                       {faq.question}
                     </h3>
                   </div>
                   <span
-                    className={`transform transition-transform duration-200 text-[#736a88] group-hover:text-[#7028e0] ${
+                    className={`transform transition-transform duration-200 text-[#736a88] group-hover:text-[#7028e0] shrink-0 ${
                       isOpen ? 'rotate-180 text-[#7028e0]' : ''
                     }`}
                   >
-                    <ChevronDown size={20} />
+                    <ChevronDown size={18} />
                   </span>
                 </button>
 
                 {isOpen && (
-                  <div className="pt-4 pl-8 sm:pl-12 pr-4 text-sm sm:text-base text-[#4a405c] leading-relaxed animate-fadeIn">
+                  <div className="pt-3 pl-7 sm:pl-12 pr-2 text-xs sm:text-base text-[#4a405c] leading-relaxed animate-fadeIn">
                     {faq.answer}
                   </div>
                 )}
