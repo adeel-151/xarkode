@@ -2,7 +2,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 export default function DirectByDesign() {
   return (
-    <section id="about" className="bg-[#f7f6f1] text-[#180838] py-24 border-b border-[#180838]/10">
+    <section id="about" className="bg-[#f7f6f1] text-[#180838] py-14 sm:py-24 border-b border-[#180838]/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Bar */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b border-[#180838]/15 gap-4 text-xs font-mono tracking-widest text-[#645b77] uppercase">
@@ -14,13 +14,11 @@ export default function DirectByDesign() {
         </div>
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 pt-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-8 pt-8 sm:pt-16 items-start">
           {/* Left Column: Huge Typography */}
           <div className="lg:col-span-6">
-            <h2 className="font-display font-semibold text-[36px] sm:text-6xl lg:text-[5.5rem] leading-[40px] sm:leading-[0.92] tracking-[-1.5px] sm:tracking-[-3.5px] uppercase text-[#180838] break-words">
-              DIRECT<br />
-              BY<br />
-              <span className="text-[#7028e0]">DESIGN.</span>
+            <h2 className="font-display font-semibold text-[34px] sm:text-6xl lg:text-[5.5rem] leading-[38px] sm:leading-[0.92] tracking-[-1.5px] sm:tracking-[-3.5px] uppercase text-[#180838] break-words">
+              DIRECT BY <br className="hidden sm:inline" /><span className="text-[#7028e0]">DESIGN.</span>
             </h2>
           </div>
 

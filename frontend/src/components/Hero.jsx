@@ -39,12 +39,10 @@ export default function Hero() {
         {/* Hero Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Big Typography & Actions */}
-          <div className="lg:col-span-7 flex flex-col space-y-8">
-            <h1 className="font-display font-semibold text-[32px] sm:text-[48px] md:text-[58px] lg:text-[65px] leading-[36px] sm:leading-[50px] md:leading-[60px] lg:leading-[65px] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-4.24px] uppercase text-white break-words">
-              THE FOUNDATION<br />
-              BENEATH<br />
-              <span className="text-[#a78bfa]">YOUR DIGITAL</span><br />
-              GROWTH.
+          <div className="lg:col-span-7 flex flex-col space-y-6 sm:space-y-8">
+            <h1 className="font-display font-semibold text-3xl sm:text-5xl md:text-6xl lg:text-[65px] leading-[1.08] sm:leading-[1.0] lg:leading-[65px] tracking-tight sm:tracking-[-2px] lg:tracking-[-4.24px] uppercase text-white break-words">
+              THE FOUNDATION BENEATH <br className="hidden sm:inline" />
+              <span className="text-[#a78bfa]">YOUR DIGITAL</span> GROWTH.
             </h1>
 
             <p className="text-white/70 text-sm sm:text-base md:text-lg max-w-xl font-normal leading-relaxed">
@@ -185,12 +183,12 @@ export default function Hero() {
         </div>
 
         {/* Hero Bottom Bar */}
-        <div className="border-t border-white/10 mt-16 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono uppercase tracking-widest text-white/50">
+        <div className="border-t border-white/10 mt-10 sm:mt-16 pt-5 sm:pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-[11px] sm:text-xs font-mono uppercase tracking-widest text-white/50">
           <div>WEB & APP / SAAS / AI AUTOMATIONS / UI/UX</div>
-          <div className="flex items-center gap-2 text-white/70">
+          <div className="flex items-center justify-between w-full sm:w-auto gap-2 text-white/70">
             <span>SCROLL TO EXPLORE</span>
+            <span className="text-[#a78bfa] font-bold text-base">↘</span>
           </div>
-          <div className="text-[#a78bfa] font-bold text-base">↘</div>
         </div>
       </div>
     </section>

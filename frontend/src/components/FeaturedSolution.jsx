@@ -12,7 +12,7 @@ export default function FeaturedSolution() {
   ];
 
   return (
-    <section className="bg-[#160a33] text-white py-24 border-b border-purple-500/20 relative overflow-hidden">
+    <section className="bg-[#160a33] text-white py-14 sm:py-24 border-b border-purple-500/20 relative overflow-hidden">
       {/* Background ambient gradient glow */}
       <div 
         className="pointer-events-none absolute left-1/3 top-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full blur-[140px] opacity-35"
@@ -32,29 +32,27 @@ export default function FeaturedSolution() {
         </div>
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 pt-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-8 pt-8 sm:pt-16 items-center">
           {/* Left Column: Heading & Explanation */}
-          <div className="lg:col-span-5 space-y-8">
+          <div className="lg:col-span-5 space-y-6 sm:space-y-8">
             <div className="flex items-center gap-2 text-xs font-mono tracking-widest text-purple-400 uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
               <span>DIGITAL INFRASTRUCTURE</span>
             </div>
 
             <h2 className="font-display font-semibold text-[32px] sm:text-5xl lg:text-[4.8rem] leading-[36px] sm:leading-[0.92] tracking-[-1.5px] sm:tracking-[-3.5px] uppercase text-white break-words">
-              DIGITAL<br />
-              SYSTEMS<br />
-              <span className="text-[#a78bfa]">BUILT TO</span><br />
-              SCALE.
+              DIGITAL SYSTEMS <br className="hidden sm:inline" />
+              <span className="text-[#a78bfa]">BUILT TO SCALE.</span>
             </h2>
 
-            <p className="text-white/75 text-base sm:text-lg leading-relaxed">
+            <p className="text-white/75 text-sm sm:text-base leading-relaxed">
               We engineer complete digital ecosystems. From client-facing web and mobile applications to backend multi-tenant SaaS platforms and autonomous AI agents that eliminate manual drag.
             </p>
 
             <div className="pt-2">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-black transition-all hover:bg-neutral-200 hover:scale-[1.02] shadow-[0_0_30px_rgba(255,255,255,0.25)]"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-6 sm:px-7 py-3 sm:py-3.5 text-xs font-bold uppercase tracking-wider text-black transition-all hover:bg-neutral-200 hover:scale-[1.02] shadow-[0_0_30px_rgba(255,255,255,0.25)]"
               >
                 <span>Explore the Digital Ecosystem</span>
                 <ArrowUpRight size={16} strokeWidth={2.5} />
@@ -64,7 +62,7 @@ export default function FeaturedSolution() {
 
           {/* Right Column: System Architecture Diagram Card */}
           <div className="lg:col-span-7">
-            <div className="bg-[#0e0724]/90 border border-purple-500/30 rounded-none p-5 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.6)] backdrop-blur-xl">
+            <div className="bg-[#0e0724]/90 border border-purple-500/30 rounded-none p-4 sm:p-8 lg:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.6)] backdrop-blur-xl">
               {/* Architecture Header */}
               <div className="flex items-center justify-between pb-6 border-b border-white/10 text-xs font-mono uppercase tracking-wider text-purple-300">
                 <span>XARKODE / ECOSYSTEM ARCHITECTURE</span>

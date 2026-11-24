@@ -172,7 +172,7 @@ export default function Playbook() {
       {/* ============================================================ */}
       {/* 1. MOBILE PRESENTATION (< lg): Native vertical cards, NO horizontal scroll */}
       {/* ============================================================ */}
-      <div className="block lg:hidden py-16 sm:py-20 px-4 sm:px-6 border-b border-white/10">
+      <div className="block lg:hidden py-14 sm:py-20 px-4 sm:px-6 border-b border-white/10">
         <div className="max-w-7xl mx-auto space-y-8">
           {/* Mobile Header Bar */}
           <div className="flex items-center justify-between pb-4 border-b border-white/10 text-xs font-mono tracking-widest text-white/60 uppercase">
@@ -191,9 +191,8 @@ export default function Playbook() {
             </div>
 
             <h2 className="font-display font-semibold text-[32px] sm:text-5xl leading-[36px] sm:leading-[0.92] tracking-[-1.5px] uppercase text-white break-words">
-              THE<br />
-              XARKODE<br />
-              <span className="text-[#a78bfa]">PLAYBOOK</span>
+              THE XARKODE <br className="hidden sm:inline" />
+              <span className="text-[#a78bfa]">PLAYBOOK.</span>
             </h2>
 
             <p className="text-white/70 text-sm leading-relaxed max-w-lg">

@@ -50,7 +50,7 @@ export default function ClientEndorsements() {
   return (
     <section 
       id="endorsements" 
-      className="bg-[#08070e] text-white py-24 border-b border-white/10 relative overflow-hidden"
+      className="bg-[#08070e] text-white py-14 sm:py-24 border-b border-white/10 relative overflow-hidden"
       style={{
         backgroundImage: `
           radial-gradient(ellipse 60% 50% at 20% 40%, rgba(112, 40, 224, 0.18) 0%, transparent 70%),
@@ -78,11 +78,10 @@ export default function ClientEndorsements() {
         </div>
 
         {/* Section Heading & Subtitle */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-14 pb-16 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-8 sm:pt-14 pb-8 sm:pb-16 items-end">
           <div className="lg:col-span-7">
             <h2 className="font-display font-semibold text-[34px] sm:text-5xl lg:text-[5.5rem] leading-[38px] sm:leading-[0.92] tracking-[-1.5px] sm:tracking-[-3.5px] uppercase text-white break-words">
-              PROOF IN<br />
-              <span className="text-[#a78bfa]">PRODUCTION.</span>
+              PROOF IN <span className="text-[#a78bfa]">PRODUCTION.</span>
             </h2>
           </div>
           <div className="lg:col-span-5">
@@ -93,11 +92,11 @@ export default function ClientEndorsements() {
         </div>
 
         {/* 3-Column Endorsements Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-10 sm:pb-16">
           {testimonials.map((item, index) => (
             <div
               key={item.clientName}
-              className="bg-[#0f0c1c]/90 border border-white/10 rounded-none p-5 sm:p-8 flex flex-col justify-between backdrop-blur-md shadow-2xl transition-all duration-300 hover:border-[#a78bfa]/50 hover:translate-y-[-2px] group"
+              className="bg-[#0f0c1c]/90 border border-white/10 rounded-none p-4 sm:p-8 flex flex-col justify-between backdrop-blur-md shadow-2xl transition-all duration-300 hover:border-[#a78bfa]/50 hover:translate-y-[-2px] group"
             >
               <div className="space-y-6">
                 {/* Card Top: Sector & Verified Badge */}

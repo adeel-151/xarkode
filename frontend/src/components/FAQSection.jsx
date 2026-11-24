@@ -54,7 +54,7 @@ export default function FAQSection() {
   };
 
   return (
-    <section id="faq" className="bg-[#f5f4ef] text-[#180838] py-24 border-b border-[#180838]/10">
+    <section id="faq" className="bg-[#f5f4ef] text-[#180838] py-14 sm:py-24 border-b border-[#180838]/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Bar */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b border-[#180838]/15 gap-4 text-xs font-mono tracking-widest text-[#645b77] uppercase">
@@ -66,11 +66,10 @@ export default function FAQSection() {
         </div>
 
         {/* Section Heading & Subtitle */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-14 pb-14 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-8 sm:pt-14 pb-8 sm:pb-14 items-end">
           <div className="lg:col-span-7">
             <h2 className="font-display font-semibold text-[34px] sm:text-5xl lg:text-[5.5rem] leading-[38px] sm:leading-[0.92] tracking-[-1.5px] sm:tracking-[-3.5px] uppercase text-[#180838] break-words">
-              FREQUENTLY<br />
-              <span className="text-[#7028e0]">ASKED.</span>
+              FREQUENTLY <span className="text-[#7028e0]">ASKED.</span>
             </h2>
           </div>
           <div className="lg:col-span-5">
@@ -85,7 +84,7 @@ export default function FAQSection() {
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
-              <div key={faq.num} className="py-6 transition-colors">
+              <div key={faq.num} className="py-4 sm:py-6 transition-colors">
                 <button
                   type="button"
                   onClick={() => toggleFAQ(index)}

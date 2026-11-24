@@ -4,10 +4,10 @@ import XarKodeLogo from './XarKodeLogo.jsx';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#08070e] text-white pt-20 pb-12 border-t border-white/10 relative overflow-hidden">
+    <footer className="bg-[#08070e] text-white pt-12 pb-8 sm:pt-20 sm:pb-12 border-t border-white/10 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Bar */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b border-white/10 gap-4 text-xs font-mono tracking-widest text-white/50 uppercase mb-16">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b border-white/10 gap-4 text-xs font-mono tracking-widest text-white/50 uppercase mb-8 sm:mb-16">
           <div className="flex items-center gap-6">
             <span className="font-bold text-white">12</span>
             <span>XARKODE / DIGITAL SOLUTIONS STUDIO</span>
@@ -16,7 +16,7 @@ export default function Footer() {
         </div>
 
         {/* Footer Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-12 pb-10 sm:pb-16">
           {/* Brand & Studio Mission (Col 1) */}
           <div className="lg:col-span-5 space-y-6">
             <Link to="/" aria-label="XarKode Home">
@@ -155,8 +155,8 @@ export default function Footer() {
         </div>
 
         {/* Giant Watermark Typography at bottom */}
-        <div className="pt-12 pb-6 border-t border-white/5 select-none overflow-hidden text-center">
-          <div className="font-display font-black text-[18vw] leading-none tracking-tighter text-white/[0.07] uppercase">
+        <div className="pt-8 sm:pt-12 pb-4 sm:pb-6 border-t border-white/5 select-none overflow-hidden text-center">
+          <div className="font-display font-black text-[15vw] sm:text-[18vw] leading-none tracking-tighter text-white/[0.07] uppercase">
             XARKODE
           </div>
         </div>

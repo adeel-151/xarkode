@@ -128,7 +128,7 @@ export default function SelectedWork() {
   const current = projects[activeIdx];
 
   return (
-    <section id="work" className="bg-[#ded4fc] text-[#1a0845] py-24 border-b border-[#1a0845]/15">
+    <section id="work" className="bg-[#ded4fc] text-[#1a0845] py-14 sm:py-24 border-b border-[#1a0845]/15">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Header Bar */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b border-[#1a0845]/15 gap-4 text-xs font-mono tracking-widest text-[#5a4488] uppercase">
@@ -140,11 +140,10 @@ export default function SelectedWork() {
         </div>
 
         {/* Section Heading & Subtitle */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-14 pb-10 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-8 sm:pt-14 pb-8 sm:pb-10 items-end">
           <div className="lg:col-span-7">
-            <h2 className="font-display font-semibold text-[36px] sm:text-6xl lg:text-[5.5rem] leading-[40px] sm:leading-[0.9] tracking-[-1.5px] sm:tracking-[-3.5px] uppercase text-[#1a0845] break-words">
-              SELECTED<br />
-              <span className="text-[#641ae6]">WORK</span>
+            <h2 className="font-display font-semibold text-[32px] sm:text-6xl lg:text-[5.5rem] leading-[36px] sm:leading-[0.9] tracking-[-1.5px] sm:tracking-[-3.5px] uppercase text-[#1a0845] break-words">
+              SELECTED <span className="text-[#641ae6]">WORK.</span>
             </h2>
           </div>
           <div className="lg:col-span-5">
@@ -155,14 +154,14 @@ export default function SelectedWork() {
         </div>
 
         {/* Interactive Case Study Selectors */}
-        <div className="flex flex-wrap gap-2 mb-8">
+        <div className="flex sm:flex-wrap gap-2 mb-6 sm:mb-8 overflow-x-auto no-scrollbar pb-1">
           {projects.map((proj, idx) => {
             const isActive = activeIdx === idx;
             return (
               <button
                 key={proj.id}
                 onClick={() => setActiveIdx(idx)}
-                className={`w-full sm:w-auto px-4 py-3 sm:px-5 sm:py-3.5 text-xs font-mono uppercase tracking-wider rounded-none transition-all cursor-pointer flex items-center justify-between sm:justify-start gap-3 ${
+                className={`shrink-0 px-4 py-2.5 sm:px-5 sm:py-3.5 text-xs font-mono uppercase tracking-wider rounded-none transition-all cursor-pointer flex items-center gap-3 whitespace-nowrap ${
                   isActive
                     ? 'bg-[#1a0845] text-white font-bold shadow-md'
                     : 'bg-white/70 text-[#5a4488] hover:bg-white hover:text-[#1a0845] border border-[#1a0845]/15'
@@ -178,7 +177,7 @@ export default function SelectedWork() {
         </div>
 
         {/* Project Card Showcase */}
-        <div className="bg-white rounded-none border border-[#1a0845]/15 p-5 sm:p-10 shadow-[0_20px_50px_rgba(30,8,77,0.08)] transition-all duration-300">
+        <div className="bg-white rounded-none border border-[#1a0845]/15 p-4 sm:p-10 shadow-[0_20px_50px_rgba(30,8,77,0.08)] transition-all duration-300">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Mockup Graphic */}
             <div className="lg:col-span-6 bg-[#0f0b1e] rounded-none p-4 sm:p-6 border border-black/10 shadow-inner flex flex-col justify-between min-h-[300px] sm:min-h-[420px]">

@@ -181,7 +181,7 @@ export default function TechStack() {
       : technologies.filter((t) => t.category === activeTab);
 
   return (
-    <section id="technology" className="bg-[#f3f1ea] text-[#180838] py-28 border-b border-[#180838]/10 relative overflow-hidden">
+    <section id="technology" className="bg-[#f3f1ea] text-[#180838] py-14 sm:py-24 border-b border-[#180838]/10 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Bar */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b border-[#180838]/15 gap-4 text-xs font-mono tracking-widest text-[#645b77] uppercase">
@@ -193,12 +193,11 @@ export default function TechStack() {
         </div>
 
         {/* Section Heading & Subtitle */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-14 pb-14 items-end">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-8 sm:pt-14 pb-8 sm:pb-14 items-end">
           <div className="lg:col-span-7">
             <h2 className="font-display font-semibold text-[32px] sm:text-5xl lg:text-[5.2rem] leading-[36px] sm:leading-[0.92] tracking-[-1.5px] sm:tracking-[-3.5px] uppercase text-[#180838] break-words">
-              THE STACK<br />
-              BEHIND <span className="text-[#7028e0]">THE</span><br />
-              WORK.
+              THE STACK BEHIND <br className="hidden sm:inline" />
+              <span className="text-[#7028e0]">THE WORK.</span>
             </h2>
           </div>
           <div className="lg:col-span-5 space-y-4">
@@ -207,12 +206,12 @@ export default function TechStack() {
             </p>
 
             {/* Filter Tabs */}
-            <div className="flex flex-wrap gap-2 pt-2">
+            <div className="flex gap-2 pt-2 overflow-x-auto no-scrollbar pb-1 sm:flex-wrap">
               {categories.map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => setActiveTab(cat.id)}
-                  className={`px-3.5 py-1.5 text-xs font-mono tracking-wider uppercase rounded-none transition-all cursor-pointer ${
+                  className={`shrink-0 px-3.5 py-1.5 text-xs font-mono tracking-wider uppercase rounded-none transition-all cursor-pointer whitespace-nowrap ${
                     activeTab === cat.id
                       ? 'bg-[#180838] text-white font-bold shadow-sm'
                       : 'bg-white/60 text-[#645b77] hover:bg-white hover:text-[#180838] border border-[#180838]/10'
@@ -262,7 +261,7 @@ export default function TechStack() {
         </div>
 
         {/* Interactive Industry Deep Dive Matrix */}
-        <div className="mt-16 bg-white/80 border border-[#180838]/15 rounded-none p-6 sm:p-10 shadow-sm">
+        <div className="mt-10 sm:mt-16 bg-white/80 border border-[#180838]/15 rounded-none p-4 sm:p-10 shadow-sm">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b border-[#180838]/10 gap-4">
             <div>
               <div className="text-[11px] font-mono uppercase tracking-widest text-[#7028e0] font-bold">
@@ -278,12 +277,12 @@ export default function TechStack() {
           </div>
 
           {/* Industry Tabs */}
-          <div className="flex flex-wrap gap-2 pt-6">
+          <div className="flex gap-2 pt-4 sm:pt-6 overflow-x-auto no-scrollbar pb-1 sm:flex-wrap">
             {industries.map((ind, idx) => (
               <button
                 key={ind.name}
                 onClick={() => setSelectedIndustry(idx)}
-                className={`px-4 py-2 text-xs font-mono uppercase tracking-wider rounded-none transition-all cursor-pointer ${
+                className={`shrink-0 px-3.5 sm:px-4 py-2 text-xs font-mono uppercase tracking-wider rounded-none transition-all cursor-pointer whitespace-nowrap ${
                   selectedIndustry === idx
                     ? 'bg-[#7028e0] text-white font-bold shadow-sm'
                     : 'bg-black/[0.03] text-[#4d445e] hover:bg-black/[0.06] border border-[#180838]/10'
@@ -323,7 +322,7 @@ export default function TechStack() {
         </div>
 
         {/* 4 Architectural Engineering Standards Grid ("HOW WE WORK") */}
-        <div className="mt-16 pt-12 border-t border-[#180838]/15">
+        <div className="mt-10 sm:mt-16 pt-8 sm:pt-12 border-t border-[#180838]/15">
           <div className="text-xs font-mono uppercase tracking-widest text-[#736a88] font-bold mb-8 flex items-center justify-between">
             <span>HOW WE WORK / ENGINEERING STANDARDS</span>
             <span>04 FOUNDATIONAL PILLARS</span>

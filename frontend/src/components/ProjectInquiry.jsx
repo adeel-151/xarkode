@@ -66,7 +66,7 @@ export default function ProjectInquiry() {
   };
 
   return (
-    <section id="contact" className="bg-[#ded4fc] text-[#1a0845] py-24 border-b border-[#1a0845]/15">
+    <section id="contact" className="bg-[#ded4fc] text-[#1a0845] py-14 sm:py-24 border-b border-[#1a0845]/15">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Bar */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b border-[#1a0845]/15 gap-4 text-xs font-mono tracking-widest text-[#5a4488] uppercase">
@@ -78,21 +78,19 @@ export default function ProjectInquiry() {
         </div>
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 pt-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-12 pt-8 sm:pt-16 items-start">
           {/* Left Column: Heading & WhatsApp CTA */}
-          <div className="lg:col-span-5 space-y-8">
+          <div className="lg:col-span-5 space-y-6 sm:space-y-8">
             <h2 className="font-display font-semibold text-[32px] sm:text-5xl lg:text-[5rem] leading-[36px] sm:leading-[0.92] tracking-[-1.5px] sm:tracking-[-3.5px] uppercase text-[#1a0845] break-words">
-              HAVE A<br />
-              PROJECT<br />
-              <span className="text-[#641ae6]">WORTH</span><br />
-              BUILDING?
+              HAVE A PROJECT <br className="hidden sm:inline" />
+              <span className="text-[#641ae6]">WORTH BUILDING?</span>
             </h2>
 
             <p className="text-sm sm:text-base text-[#463273] leading-relaxed max-w-md">
               Tell us what you are trying to improve. Your inquiry is routed directly to founder Adeel Qaiser on WhatsApp and email for immediate response.
             </p>
 
-            <div className="bg-white/60 p-5 rounded-none border border-[#1a0845]/15 space-y-3">
+            <div className="bg-white/60 p-4 sm:p-5 rounded-none border border-[#1a0845]/15 space-y-3">
               <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#1a0845] font-bold">
                 <span className="w-2 h-2 rounded-full bg-[#25D366]" />
                 <span>DIRECT LINE TO FOUNDER</span>
@@ -116,7 +114,7 @@ export default function ProjectInquiry() {
 
           {/* Right Column: Clean White Form Card */}
           <div className="lg:col-span-7">
-            <div className="bg-white rounded-none p-5 sm:p-10 border border-[#1a0845]/15 shadow-[0_20px_50px_rgba(30,8,77,0.08)]">
+            <div className="bg-white rounded-none p-4 sm:p-8 lg:p-10 border border-[#1a0845]/15 shadow-[0_20px_50px_rgba(30,8,77,0.08)]">
               {submitted ? (
                 <div className="py-10 text-center space-y-5">
                   <div className="w-16 h-16 rounded-none bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
