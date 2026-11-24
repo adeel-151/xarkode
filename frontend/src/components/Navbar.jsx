@@ -68,7 +68,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={(e) => handleNavClick(e, '#contact')}
-            className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-black transition-all duration-200 hover:bg-neutral-200 hover:scale-[1.02]"
+            className="inline-flex items-center gap-2 rounded-none bg-white px-5 py-2.5 text-xs font-mono font-bold uppercase tracking-wider text-black transition-all duration-200 hover:bg-neutral-200 hover:scale-[1.02]"
           >
             <span>Book a Strategy Call</span>
             <ArrowUpRight size={15} strokeWidth={2.5} />

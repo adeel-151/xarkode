@@ -18,14 +18,14 @@ export default function Blog() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post, i) => (
             <Reveal key={post.slug} delay={i * 0.1}>
-              <Link to={`/blog/${post.slug}`} className="group block h-full overflow-hidden rounded-3xl border border-white/5 bg-ink-800 transition-all hover:border-brand-teal/30 hover:bg-ink-800/80">
+              <Link to={`/blog/${post.slug}`} className="group block h-full overflow-hidden rounded-none border border-white/5 bg-ink-800 transition-all hover:border-brand-teal/30 hover:bg-ink-800/80">
                 <div className="relative h-56 overflow-hidden">
                   <img
                     src={post.image}
                     alt={post.title}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute top-4 left-4 rounded-full bg-ink-900/80 px-3 py-1 text-xs font-bold text-white backdrop-blur-md">
+                  <div className="absolute top-4 left-4 rounded-none bg-ink-900/80 px-3 py-1 text-xs font-bold text-white backdrop-blur-md">
                     {post.category}
                   </div>
                 </div>

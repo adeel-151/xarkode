@@ -61,14 +61,14 @@ export default function CaseStudy() {
             </Reveal>
 
             <Reveal delay={0.3}>
-              <div className="glass-card-strong p-8 rounded-3xl border border-white/5">
+              <div className="glass-card-strong p-8 rounded-none border border-white/5">
                 <h3 className="font-display text-2xl font-bold text-white mb-6 flex items-center gap-3">
                   <CheckCircle2 className="text-brand-teal" size={28} />
                   Tech Stack Used
                 </h3>
                 <div className="flex flex-wrap gap-3">
                   {(project.techStack || ['React', 'Node.js', 'Tailwind']).map((tech) => (
-                    <span key={tech} className="px-4 py-2 rounded-full border border-ink-600 bg-ink-800 text-sm font-medium text-white/80">
+                    <span key={tech} className="px-4 py-2 rounded-none border border-ink-600 bg-ink-800 text-sm font-medium text-white/80">
                       {tech}
                     </span>
                   ))}
@@ -85,14 +85,14 @@ export default function CaseStudy() {
                 
                 <div className="space-y-4">
                   {/* Hero Metric */}
-                  <div className="glass-card-strong p-6 rounded-2xl border border-brand-teal/30 bg-brand-teal/5">
+                  <div className="glass-card-strong p-6 rounded-none border border-brand-teal/30 bg-brand-teal/5">
                     <span className="block text-4xl font-extrabold text-brand-teal mb-2">{project.statValue}</span>
                     <span className="text-sm font-semibold text-white/70 uppercase tracking-widest">{project.statLabel}</span>
                   </div>
 
                   {/* Secondary Metrics */}
                   {(project.results || []).map((result, idx) => (
-                    <div key={idx} className="glass-card p-6 rounded-2xl border border-ink-600 bg-ink-800/50">
+                    <div key={idx} className="glass-card p-6 rounded-none border border-ink-600 bg-ink-800/50">
                       <span className="block text-2xl font-bold text-white mb-1">{result.value}</span>
                       <span className="text-xs font-semibold text-muted-2 uppercase tracking-widest">{result.label}</span>
                     </div>

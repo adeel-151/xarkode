@@ -101,8 +101,8 @@ export default function Hero() {
                   <span className="text-[10px] font-mono uppercase tracking-widest text-black/50">STUDIO COMPOSITION</span>
                 </div>
                 <div className="space-y-2 opacity-60">
-                  <div className="h-2 bg-black/15 rounded-full w-4/5" />
-                  <div className="h-2 bg-black/10 rounded-full w-3/5" />
+                  <div className="h-2 bg-black/15 rounded-none w-4/5" />
+                  <div className="h-2 bg-black/10 rounded-none w-3/5" />
                 </div>
               </div>
 
@@ -163,8 +163,8 @@ export default function Hero() {
                       <div className="bg-white/[0.04] border border-white/10 rounded-none p-3 backdrop-blur-sm">
                         <div className="text-[10px] text-white/50 mb-1.5">Cloud Database</div>
                         <div className="space-y-1.5">
-                          <div className="h-1.5 bg-white/20 rounded-full w-full" />
-                          <div className="h-1.5 bg-purple-500/50 rounded-full w-3/4" />
+                          <div className="h-1.5 bg-white/20 rounded-none w-full" />
+                          <div className="h-1.5 bg-purple-500/50 rounded-none w-3/4" />
                         </div>
                       </div>
 

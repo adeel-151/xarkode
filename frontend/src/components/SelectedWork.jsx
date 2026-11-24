@@ -247,7 +247,7 @@ export default function SelectedWork() {
               <div className="space-y-2 pt-2 border-t border-[#1a0845]/10">
                 {current.deliverables.map((item) => (
                   <div key={item} className="flex items-center gap-2.5 text-xs sm:text-sm text-[#270e5e] font-medium">
-                    <span className="flex items-center justify-center w-4 h-4 rounded-full bg-[#7028e0] text-white shrink-0">
+                    <span className="flex items-center justify-center w-4 h-4 rounded-none bg-[#7028e0] text-white shrink-0">
                       <Check size={11} strokeWidth={3} />
                     </span>
                     <span>{item}</span>

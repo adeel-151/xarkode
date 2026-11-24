@@ -10,7 +10,7 @@ export function Container({ className = '', children }) {
 export function Badge({ children, className = '' }) {
   return (
     <span
-      className={`inline-flex items-center rounded-full border border-ink-600 bg-ink-800 px-4 py-1.5 text-xs font-semibold tracking-wide text-muted-2 ${className}`}
+      className={`inline-flex items-center rounded-none border border-ink-600 bg-ink-800 px-4 py-1.5 text-xs font-semibold tracking-wide text-muted-2 ${className}`}
     >
       {children}
     </span>
@@ -33,7 +33,7 @@ export function Button({
   children,
 }) {
   const base =
-    'group inline-flex items-center gap-2 rounded-full font-semibold text-sm transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-60 disabled:pointer-events-none';
+    'group inline-flex items-center gap-2 rounded-none font-semibold text-sm transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-60 disabled:pointer-events-none';
 
   const styles = {
     ring: 'p-[1.5px] bg-gradient-to-r from-brand-teal to-brand-blue',
@@ -46,10 +46,10 @@ export function Button({
 
   const innerContent =
     variant === 'ring' ? (
-      <span className="flex items-center gap-2 rounded-full bg-ink-900 px-5 py-2.5 text-white">
+      <span className="flex items-center gap-2 rounded-none bg-ink-900 px-5 py-2.5 text-white">
         <span>{children}</span>
         {icon && (
-          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-r from-brand-teal to-brand-blue text-ink-900">
+          <span className="flex h-6 w-6 items-center justify-center rounded-none bg-gradient-to-r from-brand-teal to-brand-blue text-ink-900">
             <ArrowUpRight size={14} strokeWidth={2.5} />
           </span>
         )}
@@ -58,12 +58,12 @@ export function Button({
       <>
         <span>{children}</span>
         {icon && variant === 'fill' && (
-          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-ink-900 text-white">
+          <span className="flex h-6 w-6 items-center justify-center rounded-none bg-ink-900 text-white">
             <ArrowUpRight size={14} strokeWidth={2.5} />
           </span>
         )}
         {icon && variant === 'light' && (
-          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-r from-brand-teal to-brand-blue text-ink-900">
+          <span className="flex h-6 w-6 items-center justify-center rounded-none bg-gradient-to-r from-brand-teal to-brand-blue text-ink-900">
             <ArrowUpRight size={14} strokeWidth={2.5} />
           </span>
         )}

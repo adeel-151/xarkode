@@ -54,6 +54,11 @@
     font-weight: 600;
   }
 
+  /* Enforce strict brutalist sharp edges across all buttons, cards, and inputs */
+  button, input, select, textarea {
+    border-radius: 0 !important;
+  }
+
   ::selection {
     background-color: var(--color-genzic-purple);
     color: #ffffff;

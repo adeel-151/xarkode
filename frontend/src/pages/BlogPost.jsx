@@ -45,7 +45,7 @@ export default function BlogPost() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <div className="w-full h-[400px] sm:h-[500px] overflow-hidden rounded-3xl mb-12 border border-white/5 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+          <div className="w-full h-[400px] sm:h-[500px] overflow-hidden rounded-none mb-12 border border-white/5 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
             <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
           </div>
         </Reveal>

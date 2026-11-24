@@ -52,7 +52,7 @@ export default function FeaturedSolution() {
             <div className="pt-2">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 rounded-full bg-white px-6 sm:px-7 py-3 sm:py-3.5 text-xs font-bold uppercase tracking-wider text-black transition-all hover:bg-neutral-200 hover:scale-[1.02] shadow-[0_0_30px_rgba(255,255,255,0.25)]"
+                className="inline-flex items-center gap-2 rounded-none bg-white px-6 sm:px-7 py-3 sm:py-3.5 text-xs font-mono font-bold uppercase tracking-wider text-black transition-all hover:bg-neutral-200 hover:scale-[1.02] shadow-[0_0_30px_rgba(255,255,255,0.25)]"
               >
                 <span>Explore the Digital Ecosystem</span>
                 <ArrowUpRight size={16} strokeWidth={2.5} />
