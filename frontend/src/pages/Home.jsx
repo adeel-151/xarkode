@@ -7,6 +7,7 @@ import SolutionsWithIntent from '../components/SolutionsWithIntent.jsx';
 import FeaturedSolution from '../components/FeaturedSolution.jsx';
 import DirectByDesign from '../components/DirectByDesign.jsx';
 import TechStack from '../components/TechStack.jsx';
+import ClientEndorsements from '../components/ClientEndorsements.jsx';
 import FAQSection from '../components/FAQSection.jsx';
 import ProjectInquiry from '../components/ProjectInquiry.jsx';
 
@@ -40,10 +41,13 @@ export default function Home() {
       {/* 08: Tech Stack & Practices */}
       <TechStack />
 
-      {/* 11: FAQ Section */}
+      {/* 09: Client Endorsements & Proof of Execution */}
+      <ClientEndorsements />
+
+      {/* 10: FAQ Section */}
       <FAQSection />
 
-      {/* 10: Start a Project Form */}
+      {/* 11: Start a Project Form */}
       <ProjectInquiry />
     </>
   );

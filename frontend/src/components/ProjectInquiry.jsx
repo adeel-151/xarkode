@@ -71,7 +71,7 @@ export default function ProjectInquiry() {
         {/* Header Bar */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b border-[#1a0845]/15 gap-4 text-xs font-mono tracking-widest text-[#5a4488] uppercase">
           <div className="flex items-center gap-6">
-            <span className="font-bold text-[#1a0845]">10</span>
+            <span className="font-bold text-[#1a0845]">11</span>
             <span>START A PROJECT</span>
           </div>
           <div>DIRECT ROUTING TO ADEEL QAISER • WHATSAPP +92 301 5355509</div>

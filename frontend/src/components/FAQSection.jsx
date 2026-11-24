@@ -59,7 +59,7 @@ export default function FAQSection() {
         {/* Header Bar */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between pb-6 border-b border-[#180838]/15 gap-4 text-xs font-mono tracking-widest text-[#645b77] uppercase">
           <div className="flex items-center gap-6">
-            <span className="font-bold text-[#180838]">11</span>
+            <span className="font-bold text-[#180838]">10</span>
             <span>QUESTIONS, ANSWERED</span>
           </div>
           <div>BEFORE WE BEGIN</div>
