@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Send, MessageCircle, CheckCircle2 } from 'lucide-react';
+import { Send, MessageCircle, CheckCircle2, ArrowUpRight } from 'lucide-react';
 
 export default function ProjectInquiry() {
   const [formData, setFormData] = useState({
@@ -14,20 +14,55 @@ export default function ProjectInquiry() {
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [lastWhatsappUrl, setLastWhatsappUrl] = useState('');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const buildWhatsappUrl = (data = formData) => {
+    const text = [
+      `*New Project Inquiry — XarKode Website*`,
+      `---------------------------------`,
+      `👤 *Name*: ${data.name || 'Not provided'}`,
+      `📱 *Phone / WhatsApp*: ${data.phone || 'Not provided'}`,
+      `🛠️ *Requested Service*: ${data.service || 'Not specified'}`,
+      data.businessName ? `🏢 *Business*: ${data.businessName}` : null,
+      data.email ? `📧 *Email*: ${data.email}` : null,
+      data.budget ? `💰 *Budget*: ${data.budget}` : null,
+      data.details ? `📝 *Project Details*:\n${data.details}` : null,
+      `---------------------------------`,
+      `_Sent from xarkode.com contact form_`,
+    ]
+      .filter(Boolean)
+      .join('\n');
+
+    return `https://wa.me/923015355509?text=${encodeURIComponent(text)}`;
+  };
+
+  const handleDirectWhatsApp = (e) => {
+    e.preventDefault();
+    if (!formData.name.trim() || !formData.phone.trim() || !formData.service) {
+      alert('Please fill in your Name, Phone/WhatsApp number, and select a Service.');
+      return;
+    }
+    const url = buildWhatsappUrl();
+    window.open(url, '_blank');
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate reliable submission
+    const waUrl = buildWhatsappUrl();
+    setLastWhatsappUrl(waUrl);
+
+    // Auto open WhatsApp and show confirmation
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
-    }, 800);
+      window.open(waUrl, '_blank');
+    }, 600);
   };
 
   return (
@@ -39,7 +74,7 @@ export default function ProjectInquiry() {
             <span className="font-bold text-[#1a0845]">10</span>
             <span>START A PROJECT</span>
           </div>
-          <div>TELL US WHAT YOU ARE TRYING TO IMPROVE</div>
+          <div>DIRECT ROUTING TO ADEEL QAISER • WHATSAPP +92 301 5355509</div>
         </div>
 
         {/* Content Grid */}
@@ -54,24 +89,28 @@ export default function ProjectInquiry() {
             </h2>
 
             <p className="text-sm sm:text-base text-[#463273] leading-relaxed max-w-md">
-              Tell us what you are trying to improve. XarKode will help identify the right combination of strategy, design, development, and automation for your business.
+              Tell us what you are trying to improve. Your inquiry is routed directly to founder Adeel Qaiser on WhatsApp and email for immediate response.
             </p>
 
-            <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#523c82]">
-              <span className="w-2 h-2 rounded-full bg-[#7028e0]" />
-              <span>SHARE YOUR REQUIREMENTS AND THE XARKODE TEAM WILL CONTACT YOU AS SOON AS POSSIBLE.</span>
-            </div>
-
-            <div className="pt-2">
-              <a
-                href="https://wa.me/923015355509"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-bold text-[#1a0845] hover:text-[#641ae6] transition-colors"
-              >
-                <MessageCircle size={18} className="text-[#25D366]" />
-                <span>Chat on WhatsApp ↗</span>
-              </a>
+            <div className="bg-white/60 p-5 rounded-none border border-[#1a0845]/15 space-y-3">
+              <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#1a0845] font-bold">
+                <span className="w-2 h-2 rounded-full bg-[#25D366]" />
+                <span>DIRECT LINE TO FOUNDER</span>
+              </div>
+              <p className="text-xs text-[#523c82] leading-relaxed">
+                Skip agency bureaucracy. Speak directly with the digital architect who will engineer and oversee your solution.
+              </p>
+              <div className="pt-1">
+                <a
+                  href="https://wa.me/923015355509"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-[#1a0845] hover:text-[#25D366] transition-colors"
+                >
+                  <MessageCircle size={15} className="text-[#25D366]" />
+                  <span>+92 301 5355509 (Adeel Qaiser) ↗</span>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -79,23 +118,55 @@ export default function ProjectInquiry() {
           <div className="lg:col-span-7">
             <div className="bg-white rounded-none p-6 sm:p-10 border border-[#1a0845]/15 shadow-[0_20px_50px_rgba(30,8,77,0.08)]">
               {submitted ? (
-                <div className="py-12 text-center space-y-4">
-                  <div className="w-14 h-14 rounded-none bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
-                    <CheckCircle2 size={32} />
+                <div className="py-10 text-center space-y-5">
+                  <div className="w-16 h-16 rounded-none bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+                    <CheckCircle2 size={36} />
                   </div>
-                  <h3 className="font-display font-extrabold text-2xl text-[#1a0845]">
-                    Message Sent Successfully!
-                  </h3>
-                  <p className="text-sm text-[#463273] max-w-sm mx-auto">
-                    Thank you. We will review your project details and reach out within 24 hours.
-                  </p>
-                  <button
-                    type="button"
-                    onClick={() => setSubmitted(false)}
-                    className="mt-4 inline-flex items-center gap-2 rounded-none bg-[#1a0845] px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-white"
-                  >
-                    Submit Another Inquiry
-                  </button>
+                  <div>
+                    <h3 className="font-display font-extrabold text-2xl text-[#1a0845]">
+                      Inquiry Ready & Routed!
+                    </h3>
+                    <p className="text-sm text-[#463273] max-w-sm mx-auto mt-2">
+                      Thank you <span className="font-bold text-[#1a0845]">{formData.name}</span>. Your project summary has been generated and forwarded to Adeel Qaiser.
+                    </p>
+                  </div>
+
+                  {/* Fallback WhatsApp Button */}
+                  <div className="pt-2 max-w-xs mx-auto space-y-2">
+                    <a
+                      href={lastWhatsappUrl || `https://wa.me/923015355509`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-3.5 px-6 rounded-none bg-[#25D366] hover:bg-[#20ba59] text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-md transition-colors"
+                    >
+                      <MessageCircle size={16} />
+                      <span>Open WhatsApp Chat Directly ↗</span>
+                    </a>
+                    <p className="text-[11px] font-mono text-[#634d8a]">
+                      If WhatsApp didn't launch automatically, tap the button above.
+                    </p>
+                  </div>
+
+                  <div className="pt-4 border-t border-[#1a0845]/10">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSubmitted(false);
+                        setFormData({
+                          name: '',
+                          phone: '',
+                          service: '',
+                          email: '',
+                          businessName: '',
+                          budget: '',
+                          details: '',
+                        });
+                      }}
+                      className="inline-flex items-center gap-2 rounded-none border border-[#1a0845]/20 bg-white px-5 py-2.5 text-xs font-mono font-bold uppercase tracking-wider text-[#1a0845] hover:bg-neutral-100"
+                    >
+                      Submit Another Inquiry
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -126,7 +197,7 @@ export default function ProjectInquiry() {
                         required
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder="Your phone or WhatsApp number"
+                        placeholder="e.g. 03015355509"
                         className="w-full px-4 py-3 rounded-none bg-purple-50/50 border border-purple-200/80 text-sm text-[#1a0845] focus:outline-none focus:ring-2 focus:ring-[#7028e0] focus:bg-white transition-all placeholder:text-gray-400"
                       />
                     </div>
@@ -214,25 +285,34 @@ export default function ProjectInquiry() {
                       rows={3}
                       value={formData.details}
                       onChange={handleChange}
-                      placeholder="Tell us what you are trying to improve."
+                      placeholder="Tell us what you are trying to improve or build."
                       className="w-full px-4 py-3 rounded-none bg-purple-50/50 border border-purple-200/80 text-sm text-[#1a0845] focus:outline-none focus:ring-2 focus:ring-[#7028e0] focus:bg-white transition-all placeholder:text-gray-400"
                     />
                   </div>
 
-                  {/* Submit Button */}
-                  <div className="pt-2">
+                  {/* Action Buttons: Dual WhatsApp & Submit */}
+                  <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <button
+                      type="button"
+                      onClick={handleDirectWhatsApp}
+                      className="w-full py-4 rounded-none bg-[#25D366] hover:bg-[#20ba59] text-white font-mono font-bold text-xs uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-md cursor-pointer"
+                    >
+                      <MessageCircle size={16} />
+                      <span>Send to WhatsApp ↗</span>
+                    </button>
+
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full py-4 rounded-none bg-[#240d58] text-white font-display font-bold text-sm tracking-wide uppercase hover:bg-[#190840] transition-colors flex items-center justify-center gap-2 shadow-[0_10px_25px_rgba(36,13,88,0.25)]"
+                      className="w-full py-4 rounded-none bg-[#240d58] text-white font-mono font-bold text-xs uppercase tracking-wider hover:bg-[#190840] transition-all flex items-center justify-center gap-2 shadow-[0_10px_25px_rgba(36,13,88,0.25)] cursor-pointer"
                     >
                       <Send size={15} />
-                      <span>{loading ? 'Submitting...' : 'Start a Project'}</span>
+                      <span>{loading ? 'Routing...' : 'Start a Project ↗'}</span>
                     </button>
                   </div>
 
                   <p className="text-[11px] text-[#634d8a] text-center pt-2">
-                    Share your requirements and the XarKode team will contact you as soon as possible. Your details are kept private.
+                    Inquiries are sent directly to founder Adeel Qaiser (+92 301 5355509). Your data is private.
                   </p>
                 </form>
               )}
