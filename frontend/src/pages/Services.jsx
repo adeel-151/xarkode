@@ -1,17 +1,18 @@
 import PageHeader from '../components/PageHeader.jsx';
-import ServicesComponent from '../components/Services.jsx';
-import Process from '../components/Process.jsx';
+import SolutionsWithIntent from '../components/SolutionsWithIntent.jsx';
+import TechStack from '../components/TechStack.jsx';
 import CTA from '../components/CTA.jsx';
 
 export default function Services() {
   return (
     <>
       <PageHeader 
-        title="Our Services" 
-        subtitle="From AI automation to full-scale digital growth, we provide end-to-end solutions." 
+        tag="SERVICES & CAPABILITIES"
+        title="Solutions with Intent" 
+        subtitle="We build the foundation beneath your digital growth. Explore our core engineering services." 
       />
-      <ServicesComponent />
-      <Process />
+      <SolutionsWithIntent />
+      <TechStack />
       <CTA />
     </>
   );

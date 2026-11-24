@@ -1,14 +1,15 @@
 import PageHeader from '../components/PageHeader.jsx';
-import ContactComponent from '../components/Contact.jsx';
+import ProjectInquiry from '../components/ProjectInquiry.jsx';
 
 export default function Contact() {
   return (
     <>
       <PageHeader 
-        title="Get in Touch" 
-        subtitle="Let's build something extraordinary together. Reach out for a free audit." 
+        tag="CONTACT / DIRECT LINE"
+        title="Start a Project" 
+        subtitle="Speak directly with founder Adeel Qaiser. Describe your objective and we will engineer the solution." 
       />
-      <ContactComponent />
+      <ProjectInquiry />
     </>
   );
 }

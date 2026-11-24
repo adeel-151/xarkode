@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <!-- Background Radial Glow -->
+    <radialGradient id="og-glow1" cx="75%" cy="40%" r="55%" fx="75%" fy="40%">
+      <stop offset="0%" stop-color="#7028e0" stop-opacity="0.45" />
+      <stop offset="45%" stop-color="#4c1d95" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#08070e" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="og-glow2" cx="25%" cy="80%" r="45%" fx="25%" fy="80%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#08070e" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- X Logo Gradients -->
+    <linearGradient id="og-x-primary" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc" />
+      <stop offset="50%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#3b0764" />
+    </linearGradient>
+    <linearGradient id="og-x-top" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e9d5ff" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <linearGradient id="og-x-bot" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#4c1d95" />
+    </linearGradient>
+  </defs>
+
+  <!-- Pitch Midnight Background -->
+  <rect width="1200" height="630" fill="#08070e" />
+
+  <!-- Ambient Glow Meshes -->
+  <rect width="1200" height="630" fill="url(#og-glow1)" />
+  <rect width="1200" height="630" fill="url(#og-glow2)" />
+
+  <!-- Subtle Swiss Grid Lines -->
+  <line x1="80" y1="0" x2="80" y2="630" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
+  <line x1="1120" y1="0" x2="1120" y2="630" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
+  <line x1="0" y1="80" x2="1200" y2="80" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
+  <line x1="0" y1="550" x2="1200" y2="550" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1" />
+
+  <!-- Top Metadata Bar -->
+  <text x="80" y="60" fill="#ffffff" fill-opacity="0.6" font-family="Arial, 'Helvetica Neue', ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="3" text-transform="uppercase">
+    01 / XARKODE • DIGITAL SOLUTIONS STUDIO
+  </text>
+  <text x="1120" y="60" text-anchor="end" fill="#a78bfa" font-family="Arial, 'Helvetica Neue', ui-sans-serif, system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="3" text-transform="uppercase">
+    AI • WEB &amp; APP • SAAS • UI/UX
+  </text>
+
+  <!-- Left Content: Headline & Slogan -->
+  <g transform="translate(80, 160)">
+    <!-- Pill Badge -->
+    <rect x="0" y="0" width="230" height="30" fill="#18112c" stroke="#8b5cf6" stroke-opacity="0.4" stroke-width="1" />
+    <circle cx="15" cy="15" r="4" fill="#a78bfa" />
+    <text x="28" y="19.5" fill="#a78bfa" font-family="Arial, 'Helvetica Neue', ui-sans-serif, sans-serif" font-size="11" font-weight="700" letter-spacing="2">
+      ARCHITECTED FOR SCALE
+    </text>
+
+    <!-- Main Headline -->
+    <text x="0" y="85" fill="#ffffff" font-family="Arial, 'Helvetica Neue', ui-sans-serif, system-ui, sans-serif" font-size="56" font-weight="600" letter-spacing="-3">
+      THE FOUNDATION
+    </text>
+    <text x="0" y="145" fill="#ffffff" font-family="Arial, 'Helvetica Neue', ui-sans-serif, system-ui, sans-serif" font-size="56" font-weight="600" letter-spacing="-3">
+      BENEATH <tspan fill="#a78bfa">YOUR DIGITAL</tspan>
+    </text>
+    <text x="0" y="205" fill="#ffffff" font-family="Arial, 'Helvetica Neue', ui-sans-serif, system-ui, sans-serif" font-size="56" font-weight="600" letter-spacing="-3">
+      GROWTH.
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="260" fill="#ffffff" fill-opacity="0.75" font-family="Arial, 'Helvetica Neue', ui-sans-serif, system-ui, sans-serif" font-size="17" font-weight="400">
+      We connect your digital presence, automate workflows, and build scalable infrastructure.
+    </text>
+  </g>
+
+  <!-- Right Graphic: Large Geometric X Logo -->
+  <g transform="translate(860, 190)">
+    <!-- Ambient drop shadow behind X -->
+    <circle cx="100" cy="100" r="110" fill="#7028e0" opacity="0.3" filter="blur(20px)" />
+
+    <!-- Primary Diagonal Band -->
+    <polygon points="30,20 75,20 170,180 125,180" fill="url(#og-x-primary)" />
+
+    <!-- Crossing Top-Right Segment -->
+    <polygon points="170,20 125,20 90,80 120,100" fill="url(#og-x-top)" />
+
+    <!-- Crossing Bottom-Left Segment -->
+    <polygon points="80,100 110,120 75,180 30,180" fill="url(#og-x-bot)" />
+
+    <!-- Text Under Logo -->
+    <text x="100" y="235" text-anchor="middle" fill="#ffffff" font-family="Arial, 'Helvetica Neue', ui-sans-serif, system-ui, sans-serif" font-size="28" font-weight="800" letter-spacing="4">
+      XARKODE
+    </text>
+    <text x="100" y="260" text-anchor="middle" fill="#a78bfa" font-family="Arial, 'Helvetica Neue', ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="3">
+      YOUR PARTNER IN THE DIGITAL SPHERE
+    </text>
+  </g>
+
+  <!-- Bottom Footer Line -->
+  <text x="80" y="585" fill="#ffffff" fill-opacity="0.5" font-family="Arial, 'Helvetica Neue', ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="600" letter-spacing="2">
+    FOUNDER &amp; ARCHITECT: ADEEL QAISER
+  </text>
+  <text x="1120" y="585" text-anchor="end" fill="#25D366" font-family="Arial, 'Helvetica Neue', ui-sans-serif, system-ui, sans-serif" font-size="12" font-weight="700" letter-spacing="1">
+    WHATSAPP: +92 301 5355509 • XARKODESOLUTIONS@GMAIL.COM
+  </text>
+</svg>

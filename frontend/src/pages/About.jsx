@@ -1,19 +1,20 @@
 import PageHeader from '../components/PageHeader.jsx';
-import AboutComponent from '../components/About.jsx';
-import Team from '../components/Team.jsx';
-import BeforeAfter from '../components/BeforeAfter.jsx';
+import BrandManifesto from '../components/BrandManifesto.jsx';
+import DirectByDesign from '../components/DirectByDesign.jsx';
+import ClientEndorsements from '../components/ClientEndorsements.jsx';
 import CTA from '../components/CTA.jsx';
 
 export default function About() {
   return (
     <>
       <PageHeader 
-        title="About XarKode" 
-        subtitle="We build the foundation beneath your digital growth. Meet the experts driving innovation." 
+        tag="ABOUT / DIGITAL ARCHITECT"
+        title="Direct by Design" 
+        subtitle="XarKode is a premium digital agency that builds the foundation beneath your digital growth." 
       />
-      <AboutComponent />
-      <Team />
-      <BeforeAfter />
+      <BrandManifesto />
+      <DirectByDesign />
+      <ClientEndorsements />
       <CTA />
     </>
   );

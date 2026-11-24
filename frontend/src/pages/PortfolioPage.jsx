@@ -1,11 +1,17 @@
-import Portfolio from '../components/Portfolio.jsx';
+import PageHeader from '../components/PageHeader.jsx';
+import SelectedWork from '../components/SelectedWork.jsx';
 import CTA from '../components/CTA.jsx';
 
 export default function PortfolioPage() {
   return (
-    <div className="pt-20">
-      <Portfolio hideCta={true} />
+    <>
+      <PageHeader 
+        tag="PORTFOLIO / SELECTED WORK"
+        title="Public Case Studies" 
+        subtitle="Explore our flagship production systems across healthcare, multi-tenant SaaS, and autonomous AI." 
+      />
+      <SelectedWork />
       <CTA />
-    </div>
+    </>
   );
 }

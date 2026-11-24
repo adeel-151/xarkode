@@ -1,43 +1,59 @@
-import { ArrowUpRight, Zap } from 'lucide-react';
+import { ArrowUpRight, MessageCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Container, Reveal } from './ui.jsx';
-import { globalCta } from '../data/content.js';
 
 export default function CTA() {
   return (
-    <section className="bg-ink-900 py-32 sm:py-40 relative overflow-hidden">
-      {/* Massive radial ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-teal/5 blur-[120px] rounded-full pointer-events-none" />
+    <section 
+      className="bg-[#08070e] text-white py-24 sm:py-32 relative overflow-hidden border-t border-white/10"
+      style={{
+        backgroundImage: `
+          radial-gradient(ellipse 70% 60% at 50% 50%, rgba(112, 40, 224, 0.28) 0%, rgba(30, 10, 70, 0.15) 50%, transparent 80%)
+        `,
+      }}
+    >
+      {/* Ambient glow */}
+      <div 
+        className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full blur-[140px] opacity-40"
+        style={{ background: 'radial-gradient(circle, #7028e0 0%, #3b0764 80%, transparent 100%)' }}
+      />
 
-      <Container className="relative z-10">
-        <Reveal>
-          <div className="flex flex-col items-center text-center">
-            {/* Top glowing icon */}
-            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-teal/10 to-brand-blue/10 mb-8 shadow-[0_0_40px_rgba(46,230,197,0.2)]">
-              <Zap size={28} className="text-brand-teal" />
-            </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        {/* Top Header Tag */}
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/[0.05] border border-white/10 text-xs font-mono uppercase tracking-widest text-[#a78bfa] mb-8">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#a78bfa]" />
+          <span>START YOUR DIGITAL TRANSFORMATION</span>
+        </div>
 
-            <h2 className="max-w-4xl font-display text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-tight">
-              Ready to <span className="text-gradient">Scale</span> Your Business?
-            </h2>
-            <p className="mt-6 max-w-2xl text-lg sm:text-xl font-medium text-muted-2">
-              {globalCta.subtext}
-            </p>
-            
-            <Link
-              to={globalCta.buttonLink}
-              className="group mt-12 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-brand-teal to-brand-blue p-[2px] text-sm font-extrabold text-white shadow-[0_0_60px_-15px_rgba(46,230,197,0.5)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_80px_-15px_rgba(46,230,197,0.7)]"
-            >
-              <div className="flex h-full w-full items-center gap-3 rounded-full bg-ink-900 px-8 py-4 transition-colors group-hover:bg-transparent group-hover:text-ink-900">
-                {globalCta.buttonText}
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/10 group-hover:bg-ink-900/10">
-                  <ArrowUpRight size={16} />
-                </div>
-              </div>
-            </Link>
-          </div>
-        </Reveal>
-      </Container>
+        <h2 className="max-w-4xl mx-auto font-display font-semibold text-4xl sm:text-6xl md:text-7xl tracking-[-2.5px] uppercase text-white leading-[0.95]">
+          READY TO BUILD <br />
+          <span className="text-[#a78bfa]">YOUR DIGITAL FOUNDATION?</span>
+        </h2>
+
+        <p className="mt-6 max-w-2xl mx-auto text-sm sm:text-base text-white/70 font-normal leading-relaxed">
+          From custom web applications and multi-tenant SaaS architectures to autonomous AI workflow automations, XarKode engineers systems that scale.
+        </p>
+        
+        {/* Actions */}
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <Link
+            to="/#contact"
+            className="inline-flex items-center gap-2 rounded-none bg-white px-8 py-4 text-xs font-mono font-bold uppercase tracking-wider text-black transition-all hover:bg-neutral-200 hover:scale-[1.02] shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+          >
+            <span>Start a Project</span>
+            <ArrowUpRight size={16} strokeWidth={2.5} />
+          </Link>
+
+          <a
+            href="https://wa.me/923015355509"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-none border border-emerald-500/40 bg-emerald-500/10 px-8 py-4 text-xs font-mono font-bold uppercase tracking-wider text-emerald-300 transition-all hover:bg-emerald-500/20 hover:border-emerald-500/60"
+          >
+            <MessageCircle size={16} className="text-[#25D366]" />
+            <span>Chat on WhatsApp (+92 301 5355509) ↗</span>
+          </a>
+        </div>
+      </div>
     </section>
   );
 }
