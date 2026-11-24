@@ -68,7 +68,7 @@ export default function FAQSection() {
         {/* Section Heading & Subtitle */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-14 pb-14 items-end">
           <div className="lg:col-span-7">
-            <h2 className="font-display font-black text-5xl sm:text-6xl lg:text-[5.5rem] leading-[0.92] tracking-tighter uppercase text-[#180838]">
+            <h2 className="font-display font-semibold text-5xl sm:text-6xl lg:text-[5.5rem] leading-[0.92] tracking-[-3.5px] uppercase text-[#180838]">
               FREQUENTLY<br />
               <span className="text-[#7028e0]">ASKED.</span>
             </h2>

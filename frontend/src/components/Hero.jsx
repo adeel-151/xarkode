@@ -30,7 +30,7 @@ export default function Hero() {
         {/* Top Metadata Line */}
         <div className="flex items-center justify-between py-6 border-b border-white/10 mb-10 text-xs font-mono tracking-widest text-white/60">
           <div className="flex items-center gap-2 uppercase">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#8b5cf6]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#a78bfa]" />
             <span>XARKODE — YOUR PARTNER IN THE DIGITAL SPHERE</span>
           </div>
           <div>01 / 03</div>
@@ -40,10 +40,10 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Big Typography & Actions */}
           <div className="lg:col-span-7 flex flex-col space-y-8">
-            <h1 className="font-display font-black text-5xl sm:text-6xl md:text-7xl lg:text-[5.1rem] leading-[0.92] tracking-tighter uppercase text-white">
+            <h1 className="font-display font-semibold text-[44px] sm:text-[54px] md:text-[65px] leading-[46px] sm:leading-[56px] md:leading-[65px] tracking-[-2px] md:tracking-[-4.24px] uppercase text-white">
               THE FOUNDATION<br />
               BENEATH<br />
-              <span className="text-[#8b5cf6]">YOUR DIGITAL</span><br />
+              <span className="text-[#a78bfa]">YOUR DIGITAL</span><br />
               GROWTH.
             </h1>
 
@@ -108,7 +108,7 @@ export default function Hero() {
                 {/* Card Header */}
                 <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-5">
                   <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-[#8b5cf6]" />
+                    <span className="w-2 h-2 rounded-full bg-[#a78bfa]" />
                     <span className="text-[11px] font-mono tracking-wider uppercase text-white/80">XARKODE / DIGITAL ECOSYSTEM</span>
                   </div>
                   <span className="text-[10px] font-mono uppercase tracking-wider text-white/40">SYSTEM ARCHITECTURE</span>
@@ -118,7 +118,7 @@ export default function Hero() {
                 <div className="space-y-4">
                   <div className="flex items-baseline justify-between">
                     <div>
-                      <div className="text-[10px] font-mono uppercase tracking-widest text-[#8b5cf6]">ENGINEERED FOR SCALE</div>
+                      <div className="text-[10px] font-mono uppercase tracking-widest text-[#a78bfa]">ENGINEERED FOR SCALE</div>
                       <h4 className="font-display font-bold text-xl text-white mt-1">One unified platform.</h4>
                     </div>
                     <span className="text-[10px] font-mono px-2 py-0.5 rounded-none bg-purple-500/20 text-purple-300 border border-purple-500/30">
@@ -190,7 +190,7 @@ export default function Hero() {
           <div className="flex items-center gap-2 text-white/70">
             <span>SCROLL TO EXPLORE</span>
           </div>
-          <div className="text-[#8b5cf6] font-bold text-base">↘</div>
+          <div className="text-[#a78bfa] font-bold text-base">↘</div>
         </div>
       </div>
     </section>

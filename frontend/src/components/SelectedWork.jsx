@@ -26,7 +26,7 @@ export default function SelectedWork() {
         {/* Section Heading & Subtitle */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-14 pb-14 items-end">
           <div className="lg:col-span-7">
-            <h2 className="font-display font-black text-6xl sm:text-7xl lg:text-[5.5rem] leading-[0.9] tracking-tighter uppercase text-[#1a0845]">
+            <h2 className="font-display font-semibold text-6xl sm:text-7xl lg:text-[5.5rem] leading-[0.9] tracking-[-3.5px] uppercase text-[#1a0845]">
               SELECTED<br />
               <span className="text-[#641ae6]">WORK</span>
             </h2>

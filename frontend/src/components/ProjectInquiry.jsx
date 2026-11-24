@@ -46,7 +46,7 @@ export default function ProjectInquiry() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 pt-16 items-start">
           {/* Left Column: Heading & WhatsApp CTA */}
           <div className="lg:col-span-5 space-y-8">
-            <h2 className="font-display font-black text-5xl sm:text-6xl lg:text-[5rem] leading-[0.92] tracking-tighter uppercase text-[#1a0845]">
+            <h2 className="font-display font-semibold text-5xl sm:text-6xl lg:text-[5rem] leading-[0.92] tracking-[-3.5px] uppercase text-[#1a0845]">
               HAVE A<br />
               PROJECT<br />
               <span className="text-[#641ae6]">WORTH</span><br />

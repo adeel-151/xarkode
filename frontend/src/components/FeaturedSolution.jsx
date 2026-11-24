@@ -40,7 +40,7 @@ export default function FeaturedSolution() {
               <span>DIGITAL INFRASTRUCTURE</span>
             </div>
 
-            <h2 className="font-display font-black text-5xl sm:text-6xl lg:text-[4.8rem] leading-[0.92] tracking-tighter uppercase text-white">
+            <h2 className="font-display font-semibold text-5xl sm:text-6xl lg:text-[4.8rem] leading-[0.92] tracking-[-3.5px] uppercase text-white">
               DIGITAL<br />
               SYSTEMS<br />
               <span className="text-[#a78bfa]">BUILT TO</span><br />

@@ -214,10 +214,10 @@ export default function Playbook() {
                 <span>HOW WE WORK</span>
               </div>
 
-              <h2 className="font-display font-black text-4xl sm:text-5xl lg:text-[4.6rem] leading-[0.92] tracking-tighter uppercase text-white">
+              <h2 className="font-display font-semibold text-4xl sm:text-5xl lg:text-[4.6rem] leading-[0.92] tracking-[-3.5px] uppercase text-white">
                 THE<br />
                 XARKODE<br />
-                <span className="text-[#8b5cf6]">PLAYBOOK</span>
+                <span className="text-[#a78bfa]">PLAYBOOK</span>
               </h2>
 
               <p className="text-white/70 text-sm sm:text-base max-w-sm leading-relaxed">
