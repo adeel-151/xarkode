@@ -1,5 +1,6 @@
 import { Mail, Phone, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import XarKodeLogo from './XarKodeLogo.jsx';
 
 export default function Footer() {
   return (
@@ -18,16 +19,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16">
           {/* Brand & Studio Mission (Col 1) */}
           <div className="lg:col-span-5 space-y-6">
-            <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-8 h-8 flex items-center justify-center">
-                <svg viewBox="0 0 40 40" className="w-8 h-8 fill-none">
-                  <path d="M10 8 L24 8 L32 18 L18 18 Z" fill="#9d68ff" />
-                  <path d="M8 22 L22 22 L30 32 L16 32 Z" fill="#6d28d9" />
-                </svg>
-              </div>
-              <span className="font-display font-black text-2xl tracking-tight text-white uppercase">
-                XARKODE
-              </span>
+            <Link to="/" aria-label="XarKode Home">
+              <XarKodeLogo showText={true} className="w-8 h-8" textClassName="text-2xl" />
             </Link>
 
             <p className="text-sm text-white/60 max-w-sm leading-relaxed">

@@ -1,10 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
   <defs>
-    <linearGradient id="xk-grad" x1="4" y1="8" x2="60" y2="56" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#2EE6C5" />
-      <stop offset="1" stop-color="#3B82F6" />
+    <linearGradient id="xk-fav-primary" x1="10" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#c084fc" />
+      <stop offset="45%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#3b0764" />
+    </linearGradient>
+    <linearGradient id="xk-fav-top" x1="54" y1="8" x2="30" y2="34" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#e9d5ff" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <linearGradient id="xk-fav-bot" x1="34" y1="30" x2="10" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#4c1d95" />
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="16" fill="#0A0E13" />
-  <path d="M16 46L28 32L16 18H24L34 30.5L44 18H52L38 34.5L52 46H44L32 33L20 46H16Z" fill="url(#xk-grad)" />
+
+  <!-- Pitch Midnight Violet Background -->
+  <rect width="64" height="64" fill="#08070e" />
+
+  <!-- Primary Diagonal Band (Top-Left to Bottom-Right) -->
+  <polygon points="10,8 24,8 54,56 40,56" fill="url(#xk-fav-primary)" />
+
+  <!-- Crossing Top-Right Segment -->
+  <polygon points="54,8 40,8 29,26 38,32" fill="url(#xk-fav-top)" />
+
+  <!-- Crossing Bottom-Left Segment -->
+  <polygon points="26,32 35,38 24,56 10,56" fill="url(#xk-fav-bot)" />
 </svg>

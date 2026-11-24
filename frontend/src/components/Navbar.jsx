@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
+import XarKodeLogo from './XarKodeLogo.jsx';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -43,35 +44,8 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 bg-[#08070e]/85 backdrop-blur-md border-b border-white/[0.06] transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Brand Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-          {/* Angular Purple Ribbon Logo Mark */}
-          <div className="relative w-8 h-8 flex items-center justify-center">
-            <svg viewBox="0 0 40 40" className="w-8 h-8 fill-none">
-              <path
-                d="M10 8 L24 8 L32 18 L18 18 Z"
-                fill="url(#xarkode-logo-grad1)"
-                className="transition-transform duration-300 group-hover:translate-x-0.5"
-              />
-              <path
-                d="M8 22 L22 22 L30 32 L16 32 Z"
-                fill="url(#xarkode-logo-grad2)"
-                className="transition-transform duration-300 group-hover:-translate-x-0.5"
-              />
-              <defs>
-                <linearGradient id="xarkode-logo-grad1" x1="10" y1="8" x2="32" y2="18" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#9d68ff" />
-                  <stop offset="1" stopColor="#6d28d9" />
-                </linearGradient>
-                <linearGradient id="xarkode-logo-grad2" x1="8" y1="22" x2="30" y2="32" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#7c3aed" />
-                  <stop offset="1" stopColor="#4c1d95" />
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
-          <span className="font-display font-extrabold text-xl tracking-tight text-white uppercase">
-            XARKODE
-          </span>
+        <Link to="/" aria-label="XarKode Home">
+          <XarKodeLogo showText={true} className="w-8 h-8" textClassName="text-xl" />
         </Link>
 
         {/* Desktop Nav Items */}
