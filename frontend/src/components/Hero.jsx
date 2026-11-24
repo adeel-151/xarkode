@@ -2,33 +2,41 @@ import { ArrowUpRight, ArrowDownRight, MessageCircle, Calendar } from 'lucide-re
 
 export default function Hero() {
   return (
-    <section 
-      className="relative min-h-screen text-white pt-28 pb-12 flex flex-col justify-between overflow-hidden"
-      style={{
-        backgroundColor: '#08070e',
-        backgroundImage: `
-          radial-gradient(ellipse 70% 60% at 75% 38%, rgba(124, 58, 237, 0.38) 0%, rgba(99, 32, 238, 0.20) 35%, rgba(26, 9, 64, 0.10) 65%, transparent 85%),
-          radial-gradient(circle at 90% 15%, rgba(168, 85, 247, 0.25) 0%, transparent 55%)
-        `,
-      }}
-    >
-      {/* Ambient Radial Glow Meshes on the right */}
+    <section className="relative min-h-screen text-white pt-28 pb-12 flex flex-col justify-between overflow-hidden bg-[#08070e]">
+      {/* Desktop-only Ambient Radial Glow Meshes - kept off on mobile so text remains 100% clear and sharp */}
       <div 
-        className="pointer-events-none absolute right-[-8%] top-[12%] w-[880px] h-[880px] rounded-full blur-[140px] opacity-75"
+        className="pointer-events-none hidden md:block absolute inset-0"
+        style={{
+          backgroundImage: `
+            radial-gradient(ellipse 70% 60% at 75% 38%, rgba(124, 58, 237, 0.38) 0%, rgba(99, 32, 238, 0.20) 35%, rgba(26, 9, 64, 0.10) 65%, transparent 85%),
+            radial-gradient(circle at 90% 15%, rgba(168, 85, 247, 0.25) 0%, transparent 55%)
+          `,
+        }}
+      />
+      <div 
+        className="pointer-events-none hidden md:block absolute right-[-8%] top-[12%] w-[880px] h-[880px] rounded-full blur-[140px] opacity-75"
         style={{
           background: 'radial-gradient(circle, #7028e0 0%, #4c1d95 45%, #1f0a4f 70%, transparent 85%)',
         }}
       />
       <div 
-        className="pointer-events-none absolute right-[15%] top-[35%] w-[580px] h-[580px] rounded-full blur-[110px] opacity-60"
+        className="pointer-events-none hidden md:block absolute right-[15%] top-[35%] w-[580px] h-[580px] rounded-full blur-[110px] opacity-60"
         style={{
           background: 'radial-gradient(circle, #9333ea 0%, #6b21a8 50%, transparent 80%)',
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-center my-auto">
+      {/* Mobile-only subtle card glow - positioned strictly behind the lower right mockup, far away from text */}
+      <div 
+        className="pointer-events-none md:hidden absolute right-[-20%] bottom-10 w-[240px] h-[240px] rounded-full blur-[100px] opacity-20"
+        style={{
+          background: 'radial-gradient(circle, #7028e0 0%, transparent 70%)',
+        }}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-1 flex flex-col justify-center my-auto relative z-10">
         {/* Top Metadata Line */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between py-6 border-b border-white/10 mb-10 text-xs font-mono tracking-widest text-white/60 gap-2">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between py-6 border-b border-white/10 mb-10 text-xs font-mono tracking-widest text-white/80 sm:text-white/60 gap-2">
           <div className="flex items-center gap-2 uppercase">
             <span className="w-1.5 h-1.5 rounded-full bg-[#a78bfa]" />
             <span>XARKODE — YOUR PARTNER IN THE DIGITAL SPHERE</span>
@@ -45,7 +53,7 @@ export default function Hero() {
               <span className="text-[#a78bfa]">YOUR DIGITAL</span> GROWTH.
             </h1>
 
-            <p className="text-white/70 text-sm sm:text-base md:text-lg max-w-xl font-normal leading-relaxed">
+            <p className="text-white/90 sm:text-white/70 text-sm sm:text-base md:text-lg max-w-xl font-normal leading-relaxed">
               We connect your digital presence, automate your workflows, and build the infrastructure that keeps your business scaling — visibly and beneath the surface.
             </p>
 
@@ -74,7 +82,7 @@ export default function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
               </span>
-              <span className="text-xs text-white/60 font-medium tracking-wide">
+              <span className="text-xs text-white/85 sm:text-white/60 font-medium tracking-wide">
                 Currently accepting selected projects
               </span>
             </div>
@@ -183,9 +191,9 @@ export default function Hero() {
         </div>
 
         {/* Hero Bottom Bar */}
-        <div className="border-t border-white/10 mt-10 sm:mt-16 pt-5 sm:pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-[11px] sm:text-xs font-mono uppercase tracking-widest text-white/50">
+        <div className="border-t border-white/10 mt-10 sm:mt-16 pt-5 sm:pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-[11px] sm:text-xs font-mono uppercase tracking-widest text-white/70 sm:text-white/50">
           <div>WEB & APP / SAAS / AI AUTOMATIONS / UI/UX</div>
-          <div className="flex items-center justify-between w-full sm:w-auto gap-2 text-white/70">
+          <div className="flex items-center justify-between w-full sm:w-auto gap-2 text-white/90 sm:text-white/70">
             <span>SCROLL TO EXPLORE</span>
             <span className="text-[#a78bfa] font-bold text-base">↘</span>
           </div>
