@@ -74,9 +74,8 @@ function OverlappingStepCard({ step, index, scrollYProgress, activeIndex }) {
   // Z-index increases with index so subsequent cards stack on top
   const zIndex = 10 + index * 5;
 
-  // Responsive cascade offset (closer on mobile to stay within viewport bounds)
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
-  const leftOffset = isMobile ? index * 4 : index * 16;
+  // Stagger offset so previous card numbers remain visible on the left edge like tabs
+  const leftOffset = index * 22; // px offset on desktop
 
   const isCurrentActive = activeIndex === index;
 
@@ -88,47 +87,47 @@ function OverlappingStepCard({ step, index, scrollYProgress, activeIndex }) {
         zIndex,
         left: `${leftOffset}px`,
       }}
-      className="absolute top-0 w-full max-w-[calc(100vw-36px)] sm:max-w-[500px] lg:max-w-[520px] transition-shadow duration-300"
+      className="absolute top-0 w-full max-w-[460px] sm:max-w-[500px] lg:max-w-[520px] transition-shadow duration-300"
     >
       <div
-        className={`h-[350px] xs:h-[390px] sm:h-[450px] rounded-none p-5 sm:p-10 flex flex-col justify-between border transition-all duration-300 ${
+        className={`h-[420px] sm:h-[450px] rounded-none p-6 sm:p-10 flex flex-col justify-between border transition-all duration-300 ${
           isCurrentActive
-            ? 'bg-[#150f2e]/95 border-[#a78bfa]/60 shadow-[-30px_0_60px_rgba(0,0,0,0.9),0_20px_40px_rgba(112,40,224,0.3)] backdrop-blur-2xl'
+            ? 'bg-[#150f2e]/95 border-[#8b5cf6]/60 shadow-[-30px_0_60px_rgba(0,0,0,0.9),0_20px_40px_rgba(112,40,224,0.3)] backdrop-blur-2xl'
             : 'bg-[#0f0b22]/90 border-white/15 shadow-[-25px_0_50px_rgba(0,0,0,0.85)] backdrop-blur-xl'
         }`}
       >
         {/* Top Step Counter Bar */}
         <div className="flex items-center justify-between text-xs font-mono tracking-widest text-white/50 pb-5 border-b border-white/10">
           <span
-            className={`text-4xl font-display font-semibold tracking-tight ${
-              isCurrentActive ? 'text-[#a78bfa]' : 'text-white/80'
+            className={`text-4xl font-display font-black tracking-tight ${
+              isCurrentActive ? 'text-[#8b5cf6]' : 'text-white/80'
             }`}
           >
             {step.number}
           </span>
           <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#a78bfa]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#8b5cf6]" />
             <span>{step.number} / 06</span>
           </div>
         </div>
 
         {/* Title & Body */}
-        <div className="py-4 sm:py-6 space-y-3 sm:space-y-4">
-          <div className="text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-[#a78bfa]">
+        <div className="py-6 space-y-4">
+          <div className="text-[11px] font-mono uppercase tracking-widest text-[#8b5cf6]">
             {step.focus}
           </div>
-          <h3 className="font-display font-semibold text-xl sm:text-3xl text-white tracking-tight">
+          <h3 className="font-display font-bold text-2xl sm:text-3xl text-white tracking-tight">
             {step.title}
           </h3>
-          <p className="text-white/70 text-xs sm:text-base leading-relaxed line-clamp-3 sm:line-clamp-none">
+          <p className="text-white/70 text-sm sm:text-base leading-relaxed">
             {step.description}
           </p>
         </div>
 
         {/* Card Footer */}
-        <div className="flex items-center justify-between pt-4 sm:pt-5 border-t border-white/10 text-xs font-mono uppercase tracking-widest text-white/50">
+        <div className="flex items-center justify-between pt-5 border-t border-white/10 text-xs font-mono uppercase tracking-widest text-white/50">
           <span>XARKODE PROCESS</span>
-          <span className="text-[#a78bfa] font-bold text-base flex items-center gap-1">
+          <span className="text-[#8b5cf6] font-bold text-base flex items-center gap-1">
             <ArrowDownRight size={18} />
           </span>
         </div>
@@ -215,7 +214,7 @@ export default function Playbook() {
                 <span>HOW WE WORK</span>
               </div>
 
-              <h2 className="font-display font-semibold text-[32px] sm:text-5xl lg:text-[4.6rem] leading-[36px] sm:leading-[0.92] tracking-[-1.5px] sm:tracking-[-3.5px] uppercase text-white break-words">
+              <h2 className="font-display font-semibold text-4xl sm:text-5xl lg:text-[4.6rem] leading-[0.92] tracking-[-3.5px] uppercase text-white">
                 THE<br />
                 XARKODE<br />
                 <span className="text-[#a78bfa]">PLAYBOOK</span>
@@ -289,7 +288,7 @@ export default function Playbook() {
           <div className="pt-4 flex items-center justify-between border-t border-white/10 text-xs font-mono text-white/40">
             <div className="flex items-center gap-2">
               <span>PHASE</span>
-              <span className="text-[#a78bfa] font-bold">{steps[activeIndex].number}</span>
+              <span className="text-[#8b5cf6] font-bold">{steps[activeIndex].number}</span>
               <span>OF 06</span>
             </div>
 
@@ -299,7 +298,7 @@ export default function Playbook() {
                 <div
                   key={i}
                   className={`h-1.5 transition-all duration-300 ${
-                    activeIndex === i ? 'w-8 bg-[#a78bfa]' : 'w-3 bg-white/20'
+                    activeIndex === i ? 'w-8 bg-[#8b5cf6]' : 'w-3 bg-white/20'
                   }`}
                 />
               ))}
