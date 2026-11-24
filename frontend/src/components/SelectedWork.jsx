@@ -142,7 +142,7 @@ export default function SelectedWork() {
         {/* Section Heading & Subtitle */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-14 pb-10 items-end">
           <div className="lg:col-span-7">
-            <h2 className="font-display font-semibold text-6xl sm:text-7xl lg:text-[5.5rem] leading-[0.9] tracking-[-3.5px] uppercase text-[#1a0845]">
+            <h2 className="font-display font-semibold text-[36px] sm:text-6xl lg:text-[5.5rem] leading-[40px] sm:leading-[0.9] tracking-[-1.5px] sm:tracking-[-3.5px] uppercase text-[#1a0845] break-words">
               SELECTED<br />
               <span className="text-[#641ae6]">WORK</span>
             </h2>
@@ -178,10 +178,10 @@ export default function SelectedWork() {
         </div>
 
         {/* Project Card Showcase */}
-        <div className="bg-white rounded-none border border-[#1a0845]/15 p-6 sm:p-10 shadow-[0_20px_50px_rgba(30,8,77,0.08)] transition-all duration-300">
+        <div className="bg-white rounded-none border border-[#1a0845]/15 p-5 sm:p-10 shadow-[0_20px_50px_rgba(30,8,77,0.08)] transition-all duration-300">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Mockup Graphic */}
-            <div className="lg:col-span-6 bg-[#0f0b1e] rounded-none p-4 sm:p-6 border border-black/10 shadow-inner flex flex-col justify-between min-h-[420px]">
+            <div className="lg:col-span-6 bg-[#0f0b1e] rounded-none p-4 sm:p-6 border border-black/10 shadow-inner flex flex-col justify-between min-h-[300px] sm:min-h-[420px]">
               <div className="flex items-center justify-between text-[11px] font-mono text-white/50 pb-3 border-b border-white/10">
                 <span className="font-bold text-[#a78bfa]">{current.number}</span>
                 <span>{current.category}</span>

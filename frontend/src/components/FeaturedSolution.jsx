@@ -40,7 +40,7 @@ export default function FeaturedSolution() {
               <span>DIGITAL INFRASTRUCTURE</span>
             </div>
 
-            <h2 className="font-display font-semibold text-5xl sm:text-6xl lg:text-[4.8rem] leading-[0.92] tracking-[-3.5px] uppercase text-white">
+            <h2 className="font-display font-semibold text-[32px] sm:text-5xl lg:text-[4.8rem] leading-[36px] sm:leading-[0.92] tracking-[-1.5px] sm:tracking-[-3.5px] uppercase text-white break-words">
               DIGITAL<br />
               SYSTEMS<br />
               <span className="text-[#a78bfa]">BUILT TO</span><br />
@@ -64,7 +64,7 @@ export default function FeaturedSolution() {
 
           {/* Right Column: System Architecture Diagram Card */}
           <div className="lg:col-span-7">
-            <div className="bg-[#0e0724]/90 border border-purple-500/30 rounded-none p-6 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.6)] backdrop-blur-xl">
+            <div className="bg-[#0e0724]/90 border border-purple-500/30 rounded-none p-5 sm:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.6)] backdrop-blur-xl">
               {/* Architecture Header */}
               <div className="flex items-center justify-between pb-6 border-b border-white/10 text-xs font-mono uppercase tracking-wider text-purple-300">
                 <span>XARKODE / ECOSYSTEM ARCHITECTURE</span>

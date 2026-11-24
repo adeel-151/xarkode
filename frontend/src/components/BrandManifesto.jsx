@@ -15,7 +15,7 @@ export default function BrandManifesto() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 pt-16 items-start">
           {/* Giant Manifesto Headline */}
           <div className="lg:col-span-8">
-            <h2 className="font-display font-semibold text-5xl sm:text-6xl md:text-7xl lg:text-[5.4rem] leading-[0.92] tracking-[-3.5px] uppercase text-[#180838]">
+            <h2 className="font-display font-semibold text-[32px] sm:text-5xl md:text-6xl lg:text-[5.4rem] leading-[36px] sm:leading-[0.92] tracking-[-1.5px] sm:tracking-[-3.5px] uppercase text-[#180838] break-words">
               XARKODE IS NOT<br />
               HERE TO<br />
               BUILD<br />

@@ -81,7 +81,7 @@ export default function ProjectInquiry() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 pt-16 items-start">
           {/* Left Column: Heading & WhatsApp CTA */}
           <div className="lg:col-span-5 space-y-8">
-            <h2 className="font-display font-semibold text-5xl sm:text-6xl lg:text-[5rem] leading-[0.92] tracking-[-3.5px] uppercase text-[#1a0845]">
+            <h2 className="font-display font-semibold text-[32px] sm:text-5xl lg:text-[5rem] leading-[36px] sm:leading-[0.92] tracking-[-1.5px] sm:tracking-[-3.5px] uppercase text-[#1a0845] break-words">
               HAVE A<br />
               PROJECT<br />
               <span className="text-[#641ae6]">WORTH</span><br />
@@ -116,7 +116,7 @@ export default function ProjectInquiry() {
 
           {/* Right Column: Clean White Form Card */}
           <div className="lg:col-span-7">
-            <div className="bg-white rounded-none p-6 sm:p-10 border border-[#1a0845]/15 shadow-[0_20px_50px_rgba(30,8,77,0.08)]">
+            <div className="bg-white rounded-none p-5 sm:p-10 border border-[#1a0845]/15 shadow-[0_20px_50px_rgba(30,8,77,0.08)]">
               {submitted ? (
                 <div className="py-10 text-center space-y-5">
                   <div className="w-16 h-16 rounded-none bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">

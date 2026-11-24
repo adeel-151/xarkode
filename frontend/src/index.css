@@ -35,8 +35,10 @@
     box-sizing: border-box;
   }
 
-  html {
+  html, body {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 
   body {
@@ -45,7 +47,6 @@
     font-family: Arial, "Helvetica Neue", ui-sans-serif, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {

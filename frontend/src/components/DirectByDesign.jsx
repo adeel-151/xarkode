@@ -17,7 +17,7 @@ export default function DirectByDesign() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 pt-16 items-start">
           {/* Left Column: Huge Typography */}
           <div className="lg:col-span-6">
-            <h2 className="font-display font-semibold text-6xl sm:text-7xl lg:text-[5.5rem] leading-[0.92] tracking-[-3.5px] uppercase text-[#180838]">
+            <h2 className="font-display font-semibold text-[36px] sm:text-6xl lg:text-[5.5rem] leading-[40px] sm:leading-[0.92] tracking-[-1.5px] sm:tracking-[-3.5px] uppercase text-[#180838] break-words">
               DIRECT<br />
               BY<br />
               <span className="text-[#7028e0]">DESIGN.</span>

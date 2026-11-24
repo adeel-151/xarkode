@@ -79,7 +79,7 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 text-white"
+          className="md:hidden flex h-10 w-10 items-center justify-center rounded-none border border-white/10 text-white cursor-pointer"
           aria-label="Toggle Navigation"
         >
           {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -88,26 +88,34 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-white/10 bg-[#08070e]/98 px-6 py-6 backdrop-blur-xl">
+        <div className="md:hidden border-b border-white/10 bg-[#08070e]/95 px-6 py-6 backdrop-blur-2xl">
           <nav className="flex flex-col space-y-4">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-base font-semibold text-white/80 hover:text-white transition-colors"
+                className="text-base font-semibold text-white/80 hover:text-white transition-colors py-1"
               >
                 {item.label}
               </a>
             ))}
-            <div className="pt-4 border-t border-white/10">
+            <div className="pt-4 border-t border-white/10 space-y-3">
               <a
                 href="#contact"
                 onClick={(e) => handleNavClick(e, '#contact')}
-                className="flex items-center justify-center gap-2 w-full rounded-full bg-white px-5 py-3 text-xs font-bold uppercase tracking-wider text-black"
+                className="flex items-center justify-center gap-2 w-full rounded-none bg-white px-5 py-3 text-xs font-mono font-bold uppercase tracking-wider text-black"
               >
                 <span>Book a Strategy Call</span>
                 <ArrowUpRight size={15} strokeWidth={2.5} />
+              </a>
+              <a
+                href="https://wa.me/923015355509"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 w-full rounded-none border border-emerald-500/40 bg-emerald-500/10 px-5 py-2.5 text-xs font-mono font-bold uppercase tracking-wider text-emerald-300"
+              >
+                <span>WhatsApp: 0301 5355509 ↗</span>
               </a>
             </div>
           </nav>

@@ -40,22 +40,22 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Big Typography & Actions */}
           <div className="lg:col-span-7 flex flex-col space-y-8">
-            <h1 className="font-display font-semibold text-[44px] sm:text-[54px] md:text-[65px] leading-[46px] sm:leading-[56px] md:leading-[65px] tracking-[-2px] md:tracking-[-4.24px] uppercase text-white">
+            <h1 className="font-display font-semibold text-[32px] sm:text-[48px] md:text-[58px] lg:text-[65px] leading-[36px] sm:leading-[50px] md:leading-[60px] lg:leading-[65px] tracking-[-1.5px] sm:tracking-[-2.5px] md:tracking-[-4.24px] uppercase text-white break-words">
               THE FOUNDATION<br />
               BENEATH<br />
               <span className="text-[#a78bfa]">YOUR DIGITAL</span><br />
               GROWTH.
             </h1>
 
-            <p className="text-white/70 text-base sm:text-lg max-w-xl font-normal leading-relaxed">
+            <p className="text-white/70 text-sm sm:text-base md:text-lg max-w-xl font-normal leading-relaxed">
               We connect your digital presence, automate your workflows, and build the infrastructure that keeps your business scaling — visibly and beneath the surface.
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-black transition-all duration-200 hover:bg-neutral-200 hover:scale-[1.02] shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+                className="inline-flex items-center justify-center gap-2 rounded-none bg-white px-7 py-3.5 text-xs font-mono font-bold uppercase tracking-wider text-black transition-all duration-200 hover:bg-neutral-200 shadow-[0_0_30px_rgba(255,255,255,0.2)] text-center"
               >
                 <span>Start a Project</span>
                 <ArrowUpRight size={16} strokeWidth={2.5} />
@@ -63,7 +63,7 @@ export default function Hero() {
 
               <a
                 href="#work"
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.04] px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-white transition-all duration-200 hover:bg-white/10 hover:border-white/30 backdrop-blur-sm"
+                className="inline-flex items-center justify-center gap-2 rounded-none border border-white/20 bg-white/[0.04] px-7 py-3.5 text-xs font-mono font-bold uppercase tracking-wider text-white transition-all duration-200 hover:bg-white/10 hover:border-white/30 backdrop-blur-sm text-center"
               >
                 <span>Explore Our Work</span>
                 <ArrowDownRight size={16} strokeWidth={2.5} />

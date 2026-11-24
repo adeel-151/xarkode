@@ -195,7 +195,7 @@ export default function TechStack() {
         {/* Section Heading & Subtitle */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-14 pb-14 items-end">
           <div className="lg:col-span-7">
-            <h2 className="font-display font-semibold text-5xl sm:text-6xl lg:text-[5.2rem] leading-[0.92] tracking-[-3.5px] uppercase text-[#180838]">
+            <h2 className="font-display font-semibold text-[32px] sm:text-5xl lg:text-[5.2rem] leading-[36px] sm:leading-[0.92] tracking-[-1.5px] sm:tracking-[-3.5px] uppercase text-[#180838] break-words">
               THE STACK<br />
               BEHIND <span className="text-[#7028e0]">THE</span><br />
               WORK.
@@ -295,7 +295,7 @@ export default function TechStack() {
           </div>
 
           {/* Active Industry Panel */}
-          <div className="mt-6 p-6 bg-[#f7f6f1] border border-[#180838]/10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+          <div className="mt-6 p-4 sm:p-6 bg-[#f7f6f1] border border-[#180838]/10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
             <div className="space-y-2 max-w-xl">
               <div className="text-base font-display font-bold text-[#180838]">
                 {industries[selectedIndustry].name} Workflow
